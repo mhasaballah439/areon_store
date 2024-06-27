@@ -1,0 +1,16 @@
+[cart]
+[session]
+==
+{% if user %}
+<a class="link" href="{{'cart'|page}}">
+                <span uk-icon="icon: cart;">
+                <span class="numCart">{{cartData.count > 0 ? cartData.count : 0}}</span>
+                </span>
+</a>
+{% else %}
+<a class="link" href="{{'login'|page}}">
+                <span uk-icon="icon: cart;">
+                <span class="numCart">0</span>
+                </span>
+</a>
+{% endif %}

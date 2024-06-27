@@ -1,0 +1,6 @@
+plugin:
+    name: 'coolnet.adminauth::lang.plugin.name'
+    description: 'coolnet.adminauth::lang.plugin.description'
+    author: Coolnet
+    icon: oc-icon-adjust
+    homepage: ''

@@ -1,0 +1,11 @@
+plugin:
+    name: 'coolnet.profile::lang.plugin.name'
+    description: 'coolnet.profile::lang.plugin.description'
+    author: coolnet
+    icon: oc-icon-home
+    homepage: ''
+navigation:
+    main-menu-item:
+        label: 'coolnet.profile::lang.address'
+        url: coolnet/profile/address
+        icon: icon-home

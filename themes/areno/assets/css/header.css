@@ -1,0 +1,371 @@
+@import url("https://fonts.googleapis.com/css2?family=Alfa+Slab+One&family=Montserrat+Alternates:wght@200;400;500;600;800&family=Sigmar+One&display=swap");
+
+:root {
+  --color: rgb(41 38 33 / 21%);
+  --bg-color: rgb(41 38 33 / 21%);
+  --font_color: rgba(255, 255, 255, 0);
+  --active_color: white;
+
+}
+::-webkit-scrollbar {
+  width: 4px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: gainsboro;
+}
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #cab671;
+}
+::-moz-scrollbar-track {
+  background: #cab671;
+}
+/* Handle */
+::-moz-scrollbar-thumb {
+  background: #cab671;
+}
+/* Handle on hover */
+::-moz-scrollbar-thumb:hover {
+  background: #cab671;
+}
+input:focus{
+  outline: none;
+}
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+body,
+html {
+  overflow-x: hidden;
+  position: relative;
+  cursor: none;
+  font-family: "Montserrat Alternates", sans-serif;
+  background-color: var(--color);
+  scroll-behavior: smooth;
+
+}
+div , section , p , span , i , select {
+  animation: fadeIn;
+  animation-duration: 0.5s;
+}
+.uk-logo img {
+  width: 135px;
+  height: 30px;
+}
+
+#loader {
+  overflow-x: hidden;
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  z-index: 9999999;
+  top: 0;
+  left: 0;
+  background: #fcfefc url("../imges/loader.gif") no-repeat center center;
+  background-size: 350px;
+}
+
+
+.darklightImg{
+  width: 54px;
+  background-color: white;
+  position: fixed;
+  bottom: 40px;
+  left: 23px;
+  border-radius: 100%;
+  box-shadow: 0px 1px 5px 3px #d1c085;
+  z-index: 9999;
+}
+
+body.darked .uk-divider-icon {
+  position: relative;
+  height: 20px;
+  background-image: url('../imges/Areon-White-Logo.png');
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+  background-size: contain;
+}
+body.lighed .uk-divider-icon {
+  position: relative;
+  height: 20px;
+  background-image: url('../imges/Areon-White-Logo.png');
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+  background-size: contain;
+  filter: invert(1);
+}
+
+.uk-divider-icon::before {
+  right: calc(50% + (140px / 2));
+  width: 100%;
+}
+
+.uk-divider-icon::after {
+  left: calc(50% + (140px / 2));
+  width: 100%;
+}
+
+
+.uk-navbar-container:not(.uk-navbar-transparent) {
+  background-color: transparent;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 99;
+}
+.uk-navbar-nav > li > a {
+  color: var(--active_color);
+  text-transform: uppercase;
+  transition: 0.1s ease-in-out;
+  transition-property: color, background-color;
+  font-family: "Montserrat Alternates", sans-serif;
+}
+
+.uk-search-input {
+  box-sizing: border-box;
+  margin: 0;
+  border-radius: 0;
+  font: inherit;
+  overflow: visible;
+  -webkit-appearance: none;
+  vertical-align: middle;
+  font-family: "Montserrat Alternates", sans-serif;
+  width: 100%;
+  border: none;
+  color: #fff;
+}
+.uk-navbar-nav > li.uk-active > a {
+  color: var(--active_color);
+  font-weight: 700;
+  font-family: "Montserrat Alternates", sans-serif;
+}
+
+.uk-navbar-toggle {
+  color: white;
+}
+.lightNav .uk-navbar-toggle {
+  color: black;
+}
+
+.menuIcons {
+  color: white;
+  cursor: pointer;
+  padding: 0 15px;
+  font-size: 20px;
+}
+.lightNav .menuIcons {
+  color: black;
+  cursor: pointer;
+  padding: 0 15px;
+  font-size: 20px;
+}
+
+.uk-navbar-toggle:hover {
+  color: #e6cf99;
+}
+.uk-navbar-nav > li:hover > a,
+.uk-navbar-nav > li > a.uk-open,
+.uk-navbar-nav > li > a:focus {
+  color: #e6cf99;
+  outline: 0;
+}
+
+.dd_list i {
+  margin-left: 10px;
+  transition: 0.2s linear;
+}
+.dd_list[aria-expanded="true"] i {
+  transform: rotate(180deg);
+}
+
+.title_fonts {
+  font-family: "Alfa Slab One", cursive;
+  font-weight: 700;
+  letter-spacing: 2px;
+}
+
+.title_fonts_slider {
+  color: white;
+  font-family: "Alfa Slab One", cursive;
+  font-weight: 700;
+  letter-spacing: 2px;
+}
+
+body.darked .title_fonts {
+  color: white;
+}
+
+body.lighed .title_fonts {
+  color: black;
+}
+/*Cursor Move GSAP */
+
+.cursor {
+  position: fixed;
+  box-shadow: 0px 0px 30px 4px #705d32;
+  background-color: #fff;
+  width: 6px;
+  height: 6px;
+  border-radius: 100%;
+  z-index: 1;
+  transition: 0.3s cubic-bezier(0.75, -1.27, 0.3, 2.33) transform,
+    0.2s cubic-bezier(0.75, -0.27, 0.3, 1.33) opacity;
+  user-select: none;
+  pointer-events: none;
+  z-index: 10000;
+  transform: scale(1);
+}
+.cursor.active {
+  opacity: 0.5;
+  transform: scale(0);
+}
+.cursor.hovered {
+  opacity: 0.08;
+}
+
+.cursor-follower {
+  position: fixed;
+  background-color: rgba(255, 255, 255, 0.645);
+  box-shadow: 0px 0px 30px 4px #705d32;
+  width: 20px;
+  height: 20px;
+  border-radius: 100%;
+  z-index: 1;
+  transition: 0.6s cubic-bezier(0.75, -1.27, 0.3, 2.33) transform,
+    0.2s cubic-bezier(0.75, -0.27, 0.3, 1.33) opacity;
+  user-select: none;
+  pointer-events: none;
+  z-index: 10000;
+  transform: translate(5px, 5px);
+}
+.cursor-follower.active {
+  opacity: 0.4;
+  transform: scale(3);
+  z-index: 0;
+}
+.cursor-follower.hovered {
+  opacity: 0.08;
+}
+
+/*Cursor Move GSAP */
+
+/*dark light*/
+
+.box_color {
+  text-align: center;
+  padding: 50px 0px;
+}
+
+.sunIcons {
+  font-size: 70px;
+  color: rgb(14, 14, 14);
+}
+
+.moonIcons {
+  color: white;
+  font-size: 70px;
+}
+
+.dark_bg_box {
+  background-color: rgb(14, 14, 14);
+}
+
+.title_dark {
+  font-size: 30px;
+  font-weight: 700;
+  font-family: "Montserrat Alternates", sans-serif;
+  color: white;
+}
+.lightNav {
+  background-color: #fffafae6 !important;
+  transition: 0.3s linear;
+}
+
+.lightNav .uk-navbar-nav > li > a {
+  color: #16181b;
+  text-transform: uppercase;
+  transition: 0.1s ease-in-out;
+  transition-property: color, background-color;
+  font-family: "Montserrat Alternates", sans-serif;
+}
+.lightNav .uk-logo img {
+  width: 135px;
+  height: 30px;
+  filter: invert(1);
+}
+
+.DarkNav {
+  background-color: #060405cc !important;
+  transition: 0.3s linear;
+}
+
+.title_light {
+  font-size: 30px;
+  font-weight: 700;
+  font-family: "Montserrat Alternates", sans-serif;
+}
+
+/*end*/
+
+aside {
+  width: 250px;
+  margin-bottom: 20px;
+  padding: 10px;
+}
+
+/* Right hand side placeholder css */
+aside:empty {
+  height: 300px;
+
+  background-image:
+			/* TOP SECTION */ linear-gradient(
+      #e9e9ea 15px,
+      transparent 0
+    ),
+    linear-gradient(#f4f4f5 50px, transparent 0),
+    /* MIDDLE SECTION */ linear-gradient(#e9e9ea 10px, transparent 0),
+    linear-gradient(#e9e9ea 10px, transparent 0),
+    linear-gradient(#e9e9ea 10px, transparent 0),
+    linear-gradient(#e9e9ea 10px, transparent 0),
+    linear-gradient(#e9e9ea 10px, transparent 0),
+    linear-gradient(#e9e9ea 10px, transparent 0),
+    linear-gradient(#e9e9ea 10px, transparent 0),
+    linear-gradient(#e9e9ea 10px, transparent 0),
+    linear-gradient(#f4f4f5 150px, transparent 0),
+    /*BOTTOM SECTION */ linear-gradient(#e9e9ea 10px, transparent 0),
+    linear-gradient(#f4f4f5 50px, transparent 0);
+
+  background-repeat: no-repeat;
+
+  background-size: 50%, 100%, /* top block */ 90%, 80%, 85%, 80%, 75%, 85%, 75%,
+    60%, 100%, /* middle block */ 30%, 100%; /* bottom block */
+
+  background-position:
+			/* top block */ 15px 20px, 0, /* middle block */ 15px 60px,
+    15px 80px, 15px 100px, 15px 120px, 15px 140px, 15px 160px, 15px 180px,
+    15px 100px, 0 52px, /*bottom block */ 15px 225px, 0 204px;
+}
+body.darked .numCart{
+    background-color: black;
+    color: white;
+    padding: 2px 5px;
+    border-radius: 10px;
+    font-weight: 600;
+}
+body.lighed .numCart{
+    background-color: white;
+    color: black;
+    padding: 2px 5px;
+    border-radius: 10px;
+    font-weight: 600;
+}
+
+button:focus{
+    outline: none;
+    box-shadow: none;
+}

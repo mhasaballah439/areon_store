@@ -1,0 +1,10 @@
+name: Address
+form: $/coolnet/profile/models/address/fields.yaml
+modelClass: Coolnet\Profile\Models\Address
+defaultRedirect: coolnet/profile/address
+create:
+    redirect: 'coolnet/profile/address/update/:id'
+    redirectClose: coolnet/profile/address
+update:
+    redirect: coolnet/profile/address
+    redirectClose: coolnet/profile/address

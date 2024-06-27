@@ -1,0 +1,30 @@
+columns:
+    id:
+        label: 'coolnet.orders::lang.id'
+        type: number
+    code:
+        label: 'coolnet.orders::lang.code'
+        type: number
+        searchable: true
+    payment:
+        label: 'coolnet.orders::lang.payment_method'
+        type: text
+    user_id:
+        label: 'coolnet.orders::lang.user'
+        select: name
+        relation: user
+    status_id:
+        label: 'coolnet.orders::lang.status'
+        select: name
+        relation: status
+    order_from:
+        label: 'coolnet.orders::lang.order_from'
+        type: text
+    created_at:
+        label: 'coolnet.orders::lang.created_at'
+        type: datetime
+    action:
+        label: Mer
+        type: partial
+        clickable: false
+        path: ~/plugins/coolnet/orders/models/orders/_action.htm

@@ -1,0 +1,8 @@
+scopes:
+    active:
+        label: Active
+        type: switch
+        default: ''
+        conditions:
+            - active = '1'
+            - active = '0'

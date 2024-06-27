@@ -1,0 +1,361 @@
+tabs:
+    fields:
+        home_title:
+            label: 'coolnet.websetting::lang.home_title'
+            span: full
+            type: text
+            tab: 'coolnet.websetting::lang.home'
+        home_subtitle:
+            label: 'coolnet.websetting::lang.home_subtitle'
+            span: full
+            type: text
+            tab: 'coolnet.websetting::lang.home'
+        home_text:
+            label: 'Home Text'
+            size: ''
+            span: full
+            type: richeditor
+            tab: 'coolnet.websetting::lang.home'
+        home_image:
+            label: 'coolnet.websetting::lang.home_image'
+            mode: image
+            useCaption: true
+            thumbOptions:
+                mode: crop
+                extension: auto
+            span: auto
+            type: fileupload
+            tab: 'coolnet.websetting::lang.home'
+        feature_title:
+            label: 'coolnet.websetting::lang.feature_title'
+            span: full
+            type: text
+            tab: 'coolnet.websetting::lang.home'
+        feature_text:
+            label: 'coolnet.websetting::lang.feature_text'
+            size: ''
+            span: full
+            type: textarea
+            tab: 'coolnet.websetting::lang.home'
+        special_title:
+            label: 'coolnet.websetting::lang.special_title'
+            span: full
+            type: text
+            tab: 'coolnet.websetting::lang.home'
+        special_text:
+            label: 'coolnet.websetting::lang.special_text'
+            size: ''
+            span: full
+            type: textarea
+            tab: 'coolnet.websetting::lang.home'
+        footer_text:
+            label: 'coolnet.websetting::lang.footer_text'
+            size: ''
+            span: full
+            type: richeditor
+            tab: 'coolnet.websetting::lang.footer'
+        copyright:
+            label: 'coolnet.websetting::lang.copyright'
+            span: full
+            type: text
+            tab: 'coolnet.websetting::lang.footer'
+        tags:
+            label: 'Tag list'
+            mode: string
+            separator: comma
+            customTags: true
+            useKey: false
+            span: full
+            type: taglist
+            tab: 'coolnet.websetting::lang.footer'
+        facebook:
+            label: Facebook
+            span: auto
+            type: text
+            tab: 'Social Media'
+        twitter:
+            label: Tripadvisor
+            span: auto
+            type: text
+            tab: 'Social Media'
+        instagram:
+            label: Instagram
+            span: auto
+            type: text
+            tab: 'Social Media'
+        google:
+            label: Google
+            span: auto
+            type: text
+            tab: 'Social Media'
+        youtube:
+            label: Youtube
+            span: auto
+            type: text
+            tab: 'Social Media'
+        snapchat:
+            label: SnapChat
+            span: auto
+            type: text
+            tab: 'Social Media'
+        messenger:
+            label: Messenger
+            span: auto
+            type: text
+            comment: 'https://www.messenger.com/t/<page_name>'
+            tab: 'Social Media'
+        whatsapp:
+            label: Whatsapp
+            span: auto
+            type: text
+            comment: 'https://wa.me/<15551234567>'
+            tab: 'Social Media'
+        telegram:
+            label: Telegram
+            span: auto
+            type: text
+            tab: 'Social Media'
+        pinterest:
+            label: Pinterest
+            span: auto
+            type: text
+            tab: 'Social Media'
+        flickr:
+            label: Flickr
+            span: auto
+            type: text
+            tab: 'Social Media'
+        skype:
+            label: Skype
+            span: auto
+            type: text
+            tab: 'Social Media'
+        tumblr:
+            label: Tumblr
+            span: auto
+            type: text
+            tab: 'Social Media'
+        tiktok:
+            label: TikTok
+            span: auto
+            type: text
+            tab: 'Social Media'
+        linkedin:
+            label: LinkedIn
+            span: auto
+            type: text
+            tab: 'Social Media'
+        Logos:
+            label: 'coolnet.websetting::lang.logos'
+            span: full
+            type: section
+            tab: 'coolnet.websetting::lang.setup'
+        logo:
+            label: Logo
+            mode: image
+            useCaption: true
+            thumbOptions:
+                mode: crop
+                extension: auto
+            span: auto
+            type: fileupload
+            comment: 'coolnet.websetting::lang.main_logo'
+            tab: 'coolnet.websetting::lang.setup'
+        dark_logo:
+            label: 'coolnet.websetting::lang.dark_logo'
+            mode: image
+            useCaption: true
+            thumbOptions:
+                mode: crop
+                extension: auto
+            span: auto
+            type: fileupload
+            tab: 'coolnet.websetting::lang.setup'
+        footer_logo:
+            label: 'coolnet.websetting::lang.footer_logo'
+            mode: image
+            useCaption: true
+            thumbOptions:
+                mode: crop
+                extension: auto
+            span: auto
+            type: fileupload
+            tab: 'coolnet.websetting::lang.setup'
+        product_image:
+            label: 'coolnet.websetting::lang.product_image'
+            span: auto
+            mode: image
+            useCaption: true
+            thumbOptions:
+                mode: crop
+                extension: auto
+            type: fileupload
+            tab: 'coolnet.websetting::lang.setup'
+        fav_icon:
+            label: 'coolnet.websetting::lang.fav_icon'
+            span: auto
+            mode: image
+            useCaption: true
+            thumbOptions:
+                mode: crop
+                extension: auto
+            type: fileupload
+            tab: 'coolnet.websetting::lang.setup'
+        overlay:
+            label: 'coolnet.websetting::lang.overlay'
+            span: auto
+            mode: image
+            useCaption: true
+            thumbOptions:
+                mode: crop
+                extension: auto
+            type: fileupload
+            tab: 'coolnet.websetting::lang.setup'
+        login_logo:
+            label: 'coolnet.websetting::lang.login_logo'
+            span: auto
+            mode: image
+            useCaption: true
+            thumbOptions:
+                mode: crop
+                extension: auto
+            type: fileupload
+            tab: 'coolnet.websetting::lang.setup'
+        address:
+            label: 'coolnet.websetting::lang.address'
+            span: full
+            type: text
+            tab: Contact
+        latlng:
+            label: 'coolnet.websetting::lang.latlng'
+            span: auto
+            type: text
+            tab: Contact
+        map_title:
+            label: 'coolnet.websetting::lang.map_title'
+            span: auto
+            type: text
+            tab: Contact
+        phone:
+            label: 'coolnet.websetting::lang.phone'
+            span: auto
+            type: text
+            tab: Contact
+        fax:
+            label: 'coolnet.websetting::lang.fax'
+            span: auto
+            type: text
+            tab: Contact
+        email:
+            label: 'coolnet.websetting::lang.email'
+            span: auto
+            type: text
+            tab: Contact
+        open_hours:
+            label: 'coolnet.websetting::lang.hours'
+            prompt: 'Add new item'
+            span: full
+            type: repeater
+            tab: 'coolnet.websetting::lang.open_hours'
+            form:
+                fields:
+                    day:
+                        label: 'coolnet.websetting::lang.day'
+                        span: auto
+                        type: text
+                    time:
+                        label: 'coolnet.websetting::lang.time'
+                        span: auto
+                        type: text
+        seo_title:
+            label: 'coolnet.websetting::lang.seo_title'
+            span: full
+            type: text
+            tab: 'coolnet.websetting::lang.seo'
+        seo_keyword:
+            label: 'Page Keywords'
+            size: ''
+            span: full
+            type: textarea
+            tab: 'coolnet.websetting::lang.seo'
+        seo_description:
+            label: 'Page Description'
+            size: ''
+            span: full
+            type: textarea
+            tab: 'coolnet.websetting::lang.seo'
+        stripe:
+            label: 'coolnet.websetting::lang.active_stripe'
+            span: auto
+            type: checkbox
+            tab: 'coolnet.websetting::lang.stripe'
+        active_test:
+            label: 'coolnet.websetting::lang.stripe_test'
+            span: auto
+            type: checkbox
+            tab: 'coolnet.websetting::lang.stripe'
+        sect1:
+            label: 'coolnet.websetting::lang.live_setting'
+            span: full
+            type: section
+            tab: 'coolnet.websetting::lang.stripe'
+        pk_live:
+            label: 'coolnet.websetting::lang.publishable_key'
+            span: auto
+            type: text
+            tab: 'coolnet.websetting::lang.stripe'
+        sk_live:
+            label: 'coolnet.websetting::lang.secret_key'
+            span: auto
+            type: text
+            tab: 'coolnet.websetting::lang.stripe'
+        section1:
+            label: 'coolnet.websetting::lang.test_setting'
+            span: full
+            type: section
+            tab: 'coolnet.websetting::lang.stripe'
+        pk_test:
+            label: 'coolnet.websetting::lang.publishable_key'
+            span: auto
+            type: text
+            tab: 'coolnet.websetting::lang.stripe'
+        sk_test:
+            label: 'coolnet.websetting::lang.secret_key'
+            span: auto
+            type: text
+            tab: 'coolnet.websetting::lang.stripe'
+        currency:
+            label: 'coolnet.websetting::lang.currency'
+            span: auto
+            type: text
+            tab: 'coolnet.websetting::lang.stripe'
+        app_ver:
+            label: 'App Version'
+            span: auto
+            type: text
+            tab: App
+        add_ver_status:
+            label: Active
+            span: auto
+            type: checkbox
+            tab: App
+        mobile_discount:
+            label: mobile_discount
+            span: auto
+            type: number
+            tab: App
+        mobile_discount_status:
+            label: Active
+            span: auto
+            type: checkbox
+            tab: App
+        ios_url:
+            label: 'IOS url'
+            span: auto
+            type: text
+            tab: App
+        android_url:
+            label: 'Android url'
+            span: auto
+            type: text
+            tab: App

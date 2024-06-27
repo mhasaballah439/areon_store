@@ -1,0 +1,104 @@
+<div
+    class="control-chart centered wrap-legend"
+    data-control="chart-pie"
+    data-size="200"
+    data-center-text="100">
+    <ul>
+        <?php foreach($warehouses as $warehouse): ?>
+        <li><?= $warehouse->name ?><span><?= $warehouse->total_items ?></span></li>
+        <?php endforeach ?>
+    </ul>
+</div>
+
+<section id="file-export">
+    <div class="row">
+        <div class="col-12">
+            <div class="card">
+                <div class="card-header">
+                    <a class="heading-elements-toggle"><i class="la la-ellipsis-v font-medium-3"></i></a>
+                    <div class="heading-elements">
+                        <ul class="list-inline mb-0">
+                            <li><a data-action="collapse"><i class="ft-minus"></i></a></li>
+                            <li><a data-action="reload"><i class="ft-rotate-cw"></i></a></li>
+                            <li><a data-action="expand"><i class="ft-maximize"></i></a></li>
+                            <li><a data-action="close"><i class="ft-x"></i></a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="card-content collapse show">
+                    <div class="card-body card-dashboard">
+                        <table class="table table-striped table-bordered file-export">
+                            <thead>
+                            <tr>
+                                <th class="text-center">Product</th>
+                                <th class="text-center">Category</th>
+                                <?php foreach($warehouses as $warehouse): ?>
+                                <th class="text-center"><?= $warehouse->name ?></th>
+                                <?php endforeach ?>
+                                <th class="text-center">Total</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <?php foreach($products as $product): ?>
+                            <tr>
+                                <td class="text-center"><?= $product->short_title ?></td>
+                                <td class="text-center"><?= $product->cat_data ?></td>
+                                <?php foreach($warehouses as $warehouse): ?>
+                                <?php $import = Coolnet\Products\Models\WarehouseMovement::where('wharehouse_id',$warehouse->id)->where('move_type','=','import')->where('product_id',$product->id)->sum('qty'); ?>
+                                <?php $export = Coolnet\Products\Models\WarehouseMovement::where('wharehouse_id',$warehouse->id)->where('move_type','=','export')->where('product_id',$product->id)->sum('qty'); ?>
+                                <?php $total = ($import -  $export); ?>
+                                <td class="text-center"><?= $total ?></td>
+                                <?php endforeach ?>
+                                <td class="text-center"><?= $product->warehouse_total ?></td>
+                            </tr>
+                            <?php endforeach ?>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<style>
+    table.table.data thead td, table.table.data thead th {
+        border-width: 1px;
+        border-top: 1px solid #d4d8da !important;
+        border-bottom: 2px solid #d4d8da !important;
+        border-color: #d4d8da;
+        padding: 0;
+        font-weight: normal;
+        text-transform: uppercase !important;
+        font-size: 11px;
+        white-space: nowrap;
+        padding: 14px 0 14px 10px !important;
+        text-align: center !important;
+    }
+    table.table.data thead tr th:first-child {
+        padding-left: 10px !important;
+    }
+    .pagination{
+        list-style: none;
+        display: flex;
+        justify-content: center !important;
+        padding: 10px 2px;
+        margin-top: 30px !important;
+    }
+
+    .pagination li{
+        margin-right: 10px !important;
+    }
+    .pagination li a{
+        color: black !important;
+    }
+
+    .pagination li.active a{
+        background-color: #34495f;
+        color: white !important;
+        padding: 4px 10px;
+        border-radius: 4px;
+    }
+    .canvas .center{
+        display: none !important;
+    }
+</style>

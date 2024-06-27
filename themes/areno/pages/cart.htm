@@ -1,0 +1,256 @@
+title = "cart"
+url = "/cart"
+layout = "default"
+[user_address]
+[checkout_payment]
+==
+function onStart(){
+if(!Auth::check())
+return redirect('/login');
+}
+function onEnd(){
+
+if(!empty($this->web_setting->seo_title)){
+$this->page->meta_title = !empty($this->page_detail->seo_title)? $this->page_detail->seo_title.' :: ':'';
+$this->page->meta_title.= $this->web_setting->seo_title;
+}
+elseif(!empty($this->page_detail->seo_title))  $this->page->meta_title = $this->page_detail->seo_title;
+
+if(!empty($this->page_detail->seo_description)) $this->page->meta_description =  $this->page_detail->seo_description ;
+elseif(!empty($this->web_setting->seo_description)) $this->page->meta_description =  $this->web_setting->seo_description ;
+
+if(!empty($this->page_detail->seo_keyword)) $this->page->meta_keywords =  $this->page_detail->seo_keyword;
+elseif(!empty($this->web_setting->seo_keyword)) $this->page->meta_keywords =  $this->web_setting->seo_keyword;
+}
+==
+{% if cartData.count > 0 %}
+<div class="cartPage_wrap">
+    <div class="container-xl">
+        <div class="row">
+            <div class="col-lg-8 wrapC">
+                <ol class="steps">
+                    <li class="step is-active " data-step="1">
+                        <i class="fal fa-spray-can"></i>
+                        <span>{{'Vogen'|_}}</span>
+                    </li>
+                    <li class="step" data-step="2">
+                        <i class="fal fa-truck"></i>
+                        <span>{{'Leverings'|_}}</span>
+                    </li>
+                    <li class="step" data-step="3">
+                        <i class="fab fa-cc-visa"></i>
+                        <span>{{'Betaling'|_}}</span>
+                    </li>
+                    <li class="step" data-step="4">
+                        <i class="fal fa-badge-check"></i>
+                        <span>{{'Kvitterings'|_}}</span>
+                    </li>
+                </ol>
+
+                <div class="backBtn hideOption" style="font-size: 25px;font-weight: 500;color: #343a40;text-align: right;margin-right: 8px;margin-bottom: 10px;"
+                ><i class="fal fa-arrow-circle-left"></i> {{'Tilback'|_}}</div>
+
+                <div class="Cart_Content">
+                    <div class="tabs-content">
+                        <div class="content_c is-active">
+                            <div class="row" id="cart_items">
+                                <!--strat  Item-->
+                                {% partial 'cart/cart_items' %}
+                            </div>
+                        </div>
+
+                        <div class="content_c">
+
+                            <div class="gluten">
+                                <p class="include d-none">{{'Select gluten free or Not !'|_}}</p>
+                                <div class="row mt-3" style="justify-content: center;">
+                                    <!-- gluten Free -->
+                                    {% partial 'cart/delivery_type' %}
+                                </div>
+                            </div>
+                            <hr class="uk-divider-icon step3line">
+
+                            <div class="valg-info ">
+                                <div class="threeRadio  hideOption " id="address_cart_list">
+                                    {% partial 'cart/address_list' %}
+                                </div>
+                                <div class="nyAddress hideOption">
+                                    {% partial 'cart/new_address' %}
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="content_c" id="stripe_area">
+                                    <!-- gluten Free -->
+                        {% partial 'checkout/payment' %}
+                        </div>
+                        <div class="content_c">
+                            <div class="container">
+                                <div class="row">
+                                    <div class="col-12 text-center successWrappp">
+                                        <div class="img_done">
+                                            <img src="{{'assets/imges/check.gif'|theme}}" style="margin-top: 30px;" alt="">
+                                        </div>
+                                        <h1 class="doneTitle">{{'Takk for din bestilling'|_}}</h1>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <span class="InvoiceBtn" type="button" uk-toggle="target: #modal-example">{{'Show Invoice'|_}}</span>
+
+                <!-- This is a button toggling the modal -->
+
+                <!-- This is the modal -->
+                <div id="modal-example" uk-modal>
+                    <div class="uk-modal-dialog uk-modal-body" style="background: transparent;" id="cart_summary_mobile">
+                        {% partial 'cart/cart_summary_mobile' %}
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 invoiceC" id="cart_summary">
+                {% partial 'cart/cart_summary' %}
+            </div>
+            <div class="control_btn ">
+                <button class="buttonBack  arrow_left previousBtn">{{'Back'|_}}</button>
+                <button class="button  arrow nextBtn">{{'Til Levering'|_}}</button>
+            </div>
+        </div>
+    </div>
+</div>
+{% else %}
+<div class="empty_cart text-center" style="margin-top: 100px;">
+    <div class="container-fluid">
+        <img src="{{'assets/imges/empty.png'|theme}}" alt="">
+        <p>{{'Cart Is Empty Now'|_}}</p>
+        <a class="btn btn_empty" style="background-color: #cab671;color: white;margin-bottom: 40px;" href="{{'home'|page}}">{{'Back To Home'|_}}</a>
+    </div>
+</div>
+{% endif %}
+{% partial 'basic/theme' %}
+
+{% put styles %}
+<link rel="stylesheet" href="{{'assets/css/cartPage.css'|theme}}">
+{% endput %}
+
+{% put scripts %}
+<script src="{{'assets/js/cartpage.js'|theme}}"></script>
+<script>
+    // /*next Btn 000*/
+    nextBtn.addEventListener("click", () => {
+        /*check user select Address Or Add New Addess */
+        if (currentStep == 2) {
+            if ($(".glutenRadio:checked").length == 0) {
+                alert("Pless Select Your Mehods");
+                flag = false;
+                console.log(flag , 'if methods');
+                return false;
+            }
+            if ($(".onlineOptionRadio").is(":checked")) {
+                console.log(flag , 'online checked');
+                flag =false;
+                // alert('error');
+                if ($(".addressRowOption").length == 0) {
+                    alert("Du må legg leveringsadresse.");
+                    flag = false;
+                    return false;
+                } else if ($(".addressRowOption input:checked").length == 0) {
+                    alert("Pless Select Your Address");
+                    flag = false;
+                    return false;
+                } else {
+                    flag = true;
+                }
+            }
+            if(flag)
+            {
+                console.log(flag , 'omar2020');
+                 nextBtn.classList.remove('d-inline-block');
+                nextBtn.classList.add('d-none');
+            }
+        }
+
+        if (currentStep == 3) {
+            console.log('steep 333');
+            //nextBtn.classList.add('d-none');
+            //nextBtn.classList.add('omar');
+        }
+        /*end check Address */
+
+        bullets[currentStep - 1].classList.add("is-complete");
+        bullets[currentStep - 1].classList.remove("is-active");
+        content[currentStep - 1].classList.remove("is-active");
+        bullets[currentStep].classList.add("is-active");
+        content[currentStep].classList.add("is-active");
+        console.log("before", currentStep);
+
+        if (flag == true || currentStep< 5) {
+            currentStep += 1;
+            previousBtn.classList.add('d-inline-block');
+            console.log(currentStep);
+            /*Prev Btn */
+            previousBtn.disabled = false;
+            if (currentStep === MAX_STEPS) {
+                nextBtn.disabled = true;
+                console.log("fisnish", MAX_STEPS);
+                bullets[MAX_STEPS - 1].classList.add("is-complete");
+                nextBtn.classList.add('d-none');
+                previousBtn.classList.remove('d-inline-block');
+                previousBtn.classList.add('d-none');
+            }
+
+
+            if (currentStep > 1) {
+                $("html, body").animate({ scrollTop: 0 }, "slow");
+                $(".invoiceC").css("display", "none");
+                $(".wrapC").addClass("col-lg-12");
+                $(".wrapC").removeClass("col-lg-8");
+
+            }
+
+        }
+
+
+
+
+    });
+
+    /*back Btn */
+    previousBtn.addEventListener("click", () => {
+        bullets[currentStep - 1].classList.remove("is-complete");
+        bullets[currentStep - 1].classList.remove("is-active");
+        content[currentStep - 1].classList.remove("is-active");
+
+        bullets[currentStep - 2].classList.remove("is-complete");
+        bullets[currentStep - 2].classList.add("is-active");
+        content[currentStep - 2].classList.add("is-active");
+        $("html, body").animate({ scrollTop: 0 }, "slow");
+        currentStep -= 1;
+        nextBtn.disabled = false;
+        nextBtn.classList.add('d-inline-block');
+        if (currentStep == 1) {
+            console.log(currentStep);
+            $("html, body").animate({ scrollTop: 0 }, "slow");
+            $(".invoiceC").css("display", "block");
+            $(".wrapC").removeClass("col-lg-12");
+            $(".wrapC").addClass("col-lg-8");
+            previousBtn.classList.remove('d-inline-block');
+        }
+    });
+
+    jQuery(function(){
+        jQuery('.glutenRadio:checked').click();
+    });
+
+    var intervalId = window.setInterval(function(){
+        cartRefresh();
+    }, 3000);
+    function cartRefresh(){
+        $.request('onCartChange', {
+            data: { data_version: {{cartDetail.data_version}}}
+    });
+    }
+</script>
+{% endput %}

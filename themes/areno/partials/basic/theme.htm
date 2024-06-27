@@ -1,0 +1,36 @@
+<!-- loader JS -->
+<div id="loader"></div>
+<div class="cursor"></div>
+<div class="cursor-follower"></div>
+<a class="darklightImg"  href="#modal-media-image" uk-toggle><img src="{{'assets/imges/darkLight.webp'|theme}}" alt=""></a>
+<div id="modal-media-image" class="uk-flex-top" uk-modal>
+    <div class="uk-modal-dialog uk-width-auto uk-margin-auto-vertical w-100">
+        <button class="uk-modal-close-outside" type="button" uk-close></button>
+        <div class="row">
+            <div class="col-6 bg-dark">
+                <div class="box_color dark_b">
+                        <span class="moonIcons">
+                            <i class="fal fa-moon"></i>
+                        </span>
+                    <div>
+                        <h3 class="title_dark">{{'Dark Theme'|_}}</h3>
+                        <a id="white" data-color="#16181b" data-color2="#eaeaea63"
+                           class="colors btn bg-white text-dark darkk">{{'Apply Theme'|_}}</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-6">
+                <div class="box_color light_b">
+                        <span class="sunIcons">
+                            <i class="fal fa-sun"></i>
+                        </span>
+                    <div>
+                        <h3 class="title_light">{{'Light Theme'|_}}</h3>
+                        <a id="white" data-color="#fff" data-color2="#2b2a2a78"
+                           class="colors btn bg-dark text-white lightt">{{'Apply Theme'|_}}</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

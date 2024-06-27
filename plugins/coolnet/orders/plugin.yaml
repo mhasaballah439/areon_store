@@ -1,0 +1,20 @@
+plugin:
+    name: 'coolnet.orders::lang.plugin.name'
+    description: 'coolnet.orders::lang.plugin.description'
+    author: coolnet
+    icon: oc-icon-certificate
+    homepage: ''
+navigation:
+    main-menu-item:
+        label: 'coolnet.orders::lang.plugin.name'
+        url: coolnet/orders/orders
+        icon: icon-cart-plus
+        sideMenu:
+            side-menu-item2:
+                label: 'coolnet.orders::lang.plugin.name'
+                url: coolnet/orders/orders
+                icon: icon-cart-plus
+            side-menu-item:
+                label: 'coolnet.orders::lang.status'
+                url: coolnet/orders/status
+                icon: icon-gears

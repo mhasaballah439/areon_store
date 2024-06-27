@@ -1,0 +1,18 @@
+plugin:
+    name: 'coolnet.websetting::lang.plugin.name'
+    description: 'coolnet.websetting::lang.plugin.description'
+    author: Coolnet
+    icon: oc-icon-cog
+    homepage: ''
+permissions:
+    coolnet.websetting:
+        tab: Coolnet
+        label: 'Web Setting'
+navigation:
+    main-menu-websetting:
+        label: 'coolnet.websetting::lang.websetting_menu'
+        url: coolnet/websetting/websetting/update/1
+        icon: icon-cog
+        permissions:
+            - coolnet.websetting
+        order: '20'

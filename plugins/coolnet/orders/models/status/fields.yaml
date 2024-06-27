@@ -1,0 +1,9 @@
+fields:
+    name:
+        label: 'coolnet.orders::lang.name'
+        span: auto
+        type: text
+    active:
+        label: 'coolnet.orders::lang.active'
+        span: auto
+        type: checkbox

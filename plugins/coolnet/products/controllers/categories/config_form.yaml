@@ -1,0 +1,10 @@
+name: Categories
+form: $/coolnet/products/models/categories/fields.yaml
+modelClass: Coolnet\Products\Models\Categories
+defaultRedirect: coolnet/products/categories
+create:
+    redirect: 'coolnet/products/categories/update/:id'
+    redirectClose: coolnet/products/categories
+update:
+    redirect: coolnet/products/categories
+    redirectClose: coolnet/products/categories

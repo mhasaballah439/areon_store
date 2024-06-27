@@ -1,0 +1,12 @@
+plugin:
+    name: 'coolnet.pages::lang.plugin.name'
+    description: 'coolnet.pages::lang.plugin.description'
+    author: Coolnet
+    icon: oc-icon-file
+    homepage: ''
+navigation:
+    main-menu-item:
+        label: 'coolnet.pages::lang.pages_menu'
+        url: coolnet/pages/pages
+        icon: icon-file
+        order: '19'

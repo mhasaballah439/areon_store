@@ -1,0 +1,122 @@
+title = "Detail"
+url = "product-detail/:slug"
+layout = "default"
+
+[detailProduct]
+slug = '{{:slug}}'
+==
+function onEnd(){
+
+if(!empty($this->web_setting->seo_title)){
+$this->page->meta_title = !empty($this->page_detail->seo_title)? $this->page_detail->seo_title.' :: ':'';
+$this->page->meta_title.= $this->web_setting->seo_title;
+}
+elseif(!empty($this->page_detail->seo_title))  $this->page->meta_title = $this->page_detail->seo_title;
+
+if(!empty($this->page_detail->seo_description)) $this->page->meta_description =  $this->page_detail->seo_description ;
+elseif(!empty($this->web_setting->seo_description)) $this->page->meta_description =  $this->web_setting->seo_description ;
+
+if(!empty($this->page_detail->seo_keyword)) $this->page->meta_keywords =  $this->page_detail->seo_keyword;
+elseif(!empty($this->web_setting->seo_keyword)) $this->page->meta_keywords =  $this->web_setting->seo_keyword;
+}
+==
+{% if product_detail %}
+<div class="product-info product-info_wrap">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-6">
+                <!-- Product Images & Alternates -->
+                <div class="product-images demo-gallery">
+                    <!-- Begin Product Images Slider -->
+                    <!-- <video src="imges/Slider/vid1.mp4" autoplay loop class=""></video> -->
+                    <div class="main-img-slider">
+                        {% for image in product_detail.images %}
+                        <a data-fancybox="gallery" href="{{image.path}}">
+                            <img src="{{image.path}}"
+                                 class="img-fluid"></a>
+                        {% endfor %}
+                    </div>
+                    <!-- End Product Images Slider -->
+                    <!-- Begin product thumb nav -->
+                    <ul class="thumb-nav">
+                        {% for image in product_detail.images %}
+                        <li><img src="{{image.path}}"></li>
+                        {% endfor %}
+                    </ul>
+                    <!-- End product thumb nav -->
+                </div>
+                <!-- End Product Images & Alternates -->
+
+            </div>
+            <div class="col-md-6">
+                <div class="product-dtl wrap_price">
+                    <div class="product-info ">
+                        <div class="product-name">{{product_detail.short_title}}</div>
+                        <div class="product-price-discount">
+                            <span  id="priceItem" price='{{product_detail.price_product|round()}}'>{{product_detail.price_product|round()}}</span> {{'Kr'|_}}
+                             </div>
+                    </div>
+                        {% if user %}
+                        <form data-request="onAddCart"
+                              data-request-data="'product_id':{{product_detail.id}}"
+                               data-request-update="'cart/header':'.cart_header'"
+                                data-request-success="msg();">
+                    <div class="priceAndAmount">
+                        <div class="number">
+                            <span class="minus"><i class="fal fa-minus"></i></span>
+                            <input type="text" name="quantity" value="1"/>
+                            <span class="plus"><i class="fal fa-plus"></i></span>
+                        </div>
+                        <button type="submit" class="btn btn-outline-gold">{{'Bestil'|_}} <i class="fal fa-shopping-cart ml-1"></i></button>
+                    </div>
+                        </form>
+                        {% else %}
+                        <div class="priceAndAmount">
+                            <div class="number">
+                                <span class="minus"><i class="fal fa-minus"></i></span>
+                                <input type="text" name="quantity" value="1"/>
+                                <span class="plus"><i class="fal fa-plus"></i></span>
+                            </div>
+                            <a href="{{'login'|page}}" type="submit" class="btn btn-outline-gold">{{'Bestil'|_}} <i class="fal fa-shopping-cart ml-1"></i></a>
+                        </div>
+                        {% endif %}
+                    <h4 class="mt-2 mb-0 desct">{{'DESCRIPTION'|_}}</h4>
+                    <p class="mt-1 mb-1 descp">
+                        {{product_detail.desc|raw}}
+                    </p>
+                    <h4 class="mt-2 mb-0 desct ">{{'DETAILS'|_}}</h4>
+                    <div class="project-info-box first"><h4 data-fontsize="13" data-lineheight="18">{{'Categories:'|_}}</h4><div class="project-terms">
+                        <a href="#" rel="tag">{{product_detail.category.name}}</a></div></div>
+
+                        <div class="project-info-box"><h4 data-fontsize="13" data-lineheight="18">{{'Product code:'|_}}</h4><div class="project-terms">
+                        <a href="#" rel="tag">{{product_detail.product_code}}</a></div></div>
+                    <div class="project-info-box"><h4 data-fontsize="13" data-lineheight="18"> {{'Produced By:'|_}}</h4><div class="project-terms">
+                        <a href="#" rel="tag">{{'Balev Corporation'|_}}</a></div></div>
+
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+{% partial 'basic/theme' %}
+
+{% else %}
+<script>
+    window.location.href = {{'404'|page}};
+</script>
+{% endif %}
+
+{% put styles %}
+<link rel="stylesheet" href="{{'assets/css/slick.css'|theme}}">
+<link rel="stylesheet" href="{{'assets/css/fancyBoxSlider.css'|theme}}">
+<link rel="stylesheet" href="{{'assets/css/product-info.css'|theme}}">
+{% endput %}
+
+{% put scripts %}
+<script src="{{'assets/js/FancyBoxSlider.js'|theme}}"></script>
+<script src="{{'assets/js/slick.js'|theme}}"></script>
+<script src="{{'assets/js/product-info.js'|theme}}"></script>
+{% endput %}

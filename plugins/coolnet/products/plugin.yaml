@@ -1,0 +1,40 @@
+plugin:
+    name: 'coolnet.products::lang.plugin.name'
+    description: 'coolnet.products::lang.plugin.description'
+    author: coolnet
+    icon: oc-icon-shopping-cart
+    homepage: ''
+navigation:
+    main-menu-item:
+        label: 'coolnet.products::lang.plugin.name'
+        url: coolnet/products/products
+        icon: icon-shopping-cart
+        sideMenu:
+            side-menu-item:
+                label: 'coolnet.products::lang.plugin.name'
+                url: coolnet/products/products
+                icon: icon-shopping-cart
+            side-menu-item2:
+                label: 'coolnet.products::lang.categories'
+                url: coolnet/products/categories
+                icon: icon-star
+            side-menu-item3:
+                label: 'coolnet.products::lang.wharehouses'
+                url: coolnet/products/warehousesdata
+                icon: icon-sitemap
+            side-menu-item4:
+                label: 'coolnet.products::lang.import_warehouse'
+                url: coolnet/products/wharehousemovementproducts
+                icon: icon-simplybuilt
+            side-menu-item5:
+                label: 'coolnet.products::lang.products_movement'
+                url: coolnet/products/warehousemoveinside
+                icon: icon-ambulance
+            side-menu-item7:
+                label: 'coolnet.products::lang.statistc'
+                url: coolnet/products/warehousestatistic
+                icon: icon-signal
+            side-menu-item6:
+                label: 'coolnet.products::lang.log'
+                url: coolnet/products/warehouselog
+                icon: icon-history

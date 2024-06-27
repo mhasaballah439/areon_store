@@ -1,0 +1,53 @@
+
+<div class="col-md-4">
+    <label class="labl">
+        <input class="glutenRadio student" type="radio" name="radioname"
+               data-request="onSelectDeliveryMethod"
+               data-request-data="'delivery_method':'cash'"
+               data-request-update="'cart/address_list':'#address_cart_list'"
+               value="one_value"
+               {{cartData.cart_detail.delivery_method == 'cash' ? 'checked' : ''}}
+        />
+        <div class="box-deliv opt1">
+            <div class="card shadow-deliv">
+                <span class="uk-badge">{{'Selected'|_}}</span>
+                <div class="card-title text-center">
+                    <p class="pt-3 include">{{'Hente Selv'|_}}</p>
+                </div>
+                <div class="">
+                    <div class="col offset-s3 text-center"><img
+                        class="pt-1 pb-3" width="55%"
+                        src="{{'assets/imges/hentNew.png'|theme}}">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </label>
+</div>
+<!--  gluten -->
+<div class="col-md-4">
+    <label class="labl">
+        <input class="glutenRadio online onlineOptionRadio" type="radio"
+               data-request="onSelectDeliveryMethod"
+               data-request-data="'delivery_method':'delivery'"
+               name="radioname" value="another"
+               {{cartData.cart_detail.delivery_method == 'delivery' ? 'checked' : ''}}
+        />
+        <div>
+            <div class="box-deliv opt2">
+                <div class="card shadow-deliv">
+                    <span class="uk-badge">{{'Selected'|_}}</span>
+                    <div class="card-title text-center">
+                        <p class="pt-3 include">{{'Levering'|_}}</p>
+                    </div>
+                    <div class="">
+                        <div class="col offset-s3 text-center"><img
+                            class="pt-1 pb-3" width="55%"
+                            src="{{'assets/imges/delvCart.png'|theme}}"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </label>
+
+</div>

@@ -1,0 +1,10 @@
+name: WebSetting
+form: $/coolnet/websetting/models/websetting/fields.yaml
+modelClass: Coolnet\Websetting\Models\WebSetting
+defaultRedirect: coolnet/websetting/websetting
+create:
+    redirect: 'coolnet/websetting/websetting/update/:id'
+    redirectClose: coolnet/websetting/websetting
+update:
+    redirect: coolnet/websetting/websetting
+    redirectClose: coolnet/websetting/websetting

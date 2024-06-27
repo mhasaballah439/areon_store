@@ -1,0 +1,192 @@
+/* Dark Light Color Navabr */
+body.lighed .uk-navbar-container:not(.uk-navbar-transparent) {
+  background-color: #060405cc !important;
+  transition: 0.3s linear;
+}
+
+body.darked .uk-navbar-container:not(.uk-navbar-transparent) {
+  background-color: #fffafae6 !important;
+  transition: 0.3s linear;
+}
+body.darked .uk-navbar-nav > li > a {
+  color: #16181b;
+  text-transform: uppercase;
+  transition: 0.1s ease-in-out;
+  transition-property: color, background-color;
+  font-family: "Montserrat Alternates", sans-serif;
+}
+
+body.darked .uk-navbar-toggle {
+  color: black;
+}
+body.darked .uk-logo img {
+  filter: invert(1);
+}
+body.darked .menuIcons {
+  color: black;
+}
+
+.AccountType{
+  display: flex;
+}
+.AccountType span{
+  background-color: #ffffffa3;
+  padding: 6px 14px;
+  border-radius: 30px;
+  font-weight: 700;
+  font-size: 15px;
+  cursor: pointer;
+}
+.AccountType span.active{
+  background-color: white;
+}
+.register .flex-item{
+  height: auto !important;
+  padding-bottom:100px;
+}
+.register  .flex-item a.btn
+{
+  bottom: 7% !important;
+}
+.company1{
+  display: none;
+}
+
+.container .flex-item {
+  position: relative;
+  width: 300px;
+  height: 533px;
+  line-height: 20px;
+  text-align: center;
+  margin: 100px auto 30px auto;
+  /*border: solid 1px #cab671;*/
+  border-radius: 10px;
+}
+
+.container .flex-item.morning {
+  background: url("../imges/loginBg.png");
+  background-size: cover;
+}
+.container .flex-item h1 {
+  padding-top: 15%;
+  color: #fff;
+}
+.container .flex-item h1 span {
+  border-bottom: solid 2px #deff00;
+}
+.container .flex-item p {
+  font-size: 0.75em;
+  color: rgba(255, 255, 255, 0.5);
+}
+.container .flex-item .ui.icon.input {
+  margin-bottom: 10px;
+}
+.container .flex-item .ui.icon.input.username {
+  margin-top: 60%;
+  position: relative;
+}
+.container .flex-item .ui.icon.input.password {
+  margin-top: 5%;
+  position: relative;
+}
+.container .flex-item .ui.icon.input input {
+  background: transparent;
+  border-top: 0;
+  border-left: 0;
+  border-right: 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+  border-radius: 0;
+  padding: 5px 0;
+  color: #fff;
+}
+.container .flex-item .ui.icon.input input::placeholder {
+  /* Chrome, Firefox, Opera, Safari 10.1+ */
+  color: rgba(255, 255, 255, 0.9);
+  opacity: 1;
+  /* Firefox */
+}
+.container .flex-item .ui.icon.input i {
+  color: rgba(255, 255, 255, 0.8);
+  position: absolute;
+  right: 15px;
+  top: 10px;
+  font-size: 20px;
+}
+.container .flex-item a.btn {
+  position: absolute;
+  bottom: 10%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255, 255, 255, 0.1);
+  color: white;
+  padding: 14px 80px;
+  border-radius: 4px;
+  height: 20px;
+  line-height: 1;
+  outline: none;
+  cursor: pointer;
+  font-size: 1em;
+}
+.bg-glass {
+  background: rgba(255, 255, 255, 0.1);
+  color: white;
+  transition: 0.3s ease-in-out;
+}
+.bg-glass:hover {
+  background: rgba(255, 255, 255, 0.3);
+  color: white;
+}
+.container .flex-item a.btn.left {
+  left: 15%;
+}
+.container .flex-item a.btn.right {
+  right: 15%;
+}
+.container .flex-item a.btn:hover {
+  background: rgba(255, 255, 255, 0.3);
+}
+.container .flex-item a.text-link {
+  position: absolute;
+  bottom: 3%;
+  left: 0;
+  right: 0;
+  margin-left: auto;
+  margin-right: auto;
+  color: rgba(255, 255, 255, 0.3);
+  height: 20px;
+  line-height: 1;
+  outline: none;
+  cursor: pointer;
+  font-size: 1em;
+}
+
+.logo_login {
+  padding-top: 25px;
+}
+
+.register .flex-item .ui.icon.input.username {
+  margin-top: 8%;
+  position: relative;
+}
+.flex-item .ui.icon.input {
+  height: 45px;
+}
+span.error {
+  position: absolute;
+  color: #df2d2d;
+  width: 80%;
+  left: 45px;
+  bottom: -12px;
+  font-size: 13px;
+  text-align: left;
+}
+
+.container .flex-item .ui.icon.input.hasError input {
+  border-bottom: 1px solid red;
+}
+
+.resetPass,
+.register {
+  display: none;
+}

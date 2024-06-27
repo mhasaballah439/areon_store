@@ -1,0 +1,20 @@
+columns:
+    id:
+        label: 'coolnet.profile::lang.id'
+        type: number
+    user_id:
+        label: 'coolnet.profile::lang.user'
+        select: name
+        relation: user
+    city:
+        label: 'coolnet.profile::lang.city'
+        type: text
+        searchable: true
+    street:
+        label: 'coolnet.profile::lang.street'
+        type: text
+        searchable: true
+    mobile:
+        label: 'coolnet.profile::lang.mobile'
+        type: number
+        searchable: true

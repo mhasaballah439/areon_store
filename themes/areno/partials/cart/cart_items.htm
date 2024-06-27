@@ -1,0 +1,33 @@
+[cart]
+==
+{% if cartData.getItems %}
+{% for item in cartData.getItems %}
+<div class="col-12">
+    <div class="tab wrap_price">
+        <div class="img-item">
+            <img src="{{item.product.images[0].path}}" alt="">
+        </div>
+        <div class="text-container">
+            <div class="title">{{item.product ? item.product.short_title : ''}}</div>
+        </div>
+        <div class="counter">
+            <span class="numTopWrap"> <span class="numTop"
+            item-price="{{item.price}}">{{item.price_round}}</span> {{'Kr'|_}}</span>
+            <div class="number">
+                <span class="minus link" data-id="{{ item.item_id }}"><i class="fal fa-minus"></i></span>
+                <input disabled type="text" value="{{item.quantity}}" />
+                <span class="plus link" data-id="{{ item.item_id }}"><i class="fal fa-plus"></i></span>
+            </div>
+        </div>
+        <div class="delete_cart">
+            <a class="link"
+               data-request="onRemoveCart"
+               data-request-data="{item_id: '{{ item.item_id }}'}"
+               data-request-update=" 'cart/cart_summary':'#cart_summary','cart/cart_summary_mobile':'#cart_summary_mobile', 'cart/cart_items':'#cart_items'"
+            >
+                <i class="fal fa-trash text-danger"></i></a>
+        </div>
+    </div>
+</div>
+{% endfor %}
+{% endif %}

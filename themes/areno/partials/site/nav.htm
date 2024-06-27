@@ -1,0 +1,6 @@
+{% for item in items %}
+<li class="{{  this.page.id == item.page_id ? 'uk-active' : '' }}">
+    <a class="nav-link" href="{{  item.getLinkHref ? item.getLinkHref : '#' }}">
+        {{item.title}}</a>
+</li>
+{% endfor %}

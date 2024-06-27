@@ -1,0 +1,10 @@
+fields:
+    product_id:
+        label: 'coolnet.products::lang.plugin.name'
+        showSearch: true
+        span: auto
+        type: dropdown
+    qty:
+        label: 'coolnet.products::lang.qty'
+        span: auto
+        type: number

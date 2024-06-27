@@ -1,0 +1,59 @@
+
+<!-- Start NavBar -->
+<nav class="uk-navbar-container uk-margin"  uk-navbar>
+    <div class="nav-overlay uk-navbar-left">
+        <a class="uk-navbar-item uk-logo" href="{{'home'|page}}">
+            <img src="{{web_setting.logo.path}}" alt="">
+        </a>
+    </div>
+    <div class="nav-overlay uk-navbar-right">
+        <ul class="uk-navbar-nav  d-lg-flex d-none">
+            {% partial 'site/nav' items=top_nav %}
+            {% if user %}
+            <li><a class="link" href="{{'profile'|page}}"><span uk-icon="icon: user;"></span></a></li>
+            {% else %}
+            <li><a class="link" href="{{'login'|page}}"><span uk-icon="icon: user;"></span></a></li>
+            {% endif %}
+            <li class="cart_header">
+
+               {% partial 'cart/header' %}
+
+            </li>
+        </ul>
+
+        <span class="menuIcons link d-lg-none d-flex" href="#" uk-toggle="target: #offcanvas-push"><i
+            class="fal fa-bars"></i></span>
+        <!-- search icons -->
+        <a class="uk-navbar-toggle link" uk-search-icon
+           uk-toggle="target: .nav-overlay; animation: uk-animation-fade" href="#"></a>
+    </div>
+    <div class="nav-overlay uk-navbar-left uk-flex-1" hidden>
+        <div class="uk-navbar-item uk-width-expand">
+            <form class="uk-search uk-search-navbar uk-width-1-1" method="get" action="{{'products_all'|page}}">
+                <input class="uk-search-input" value="{{get('query')}}" name="query" type="search" placeholder="Search" autofocus>
+            </form>
+        </div>
+        <a class="uk-navbar-toggle" uk-close uk-toggle="target: .nav-overlay; animation: uk-animation-fade"
+           href="#"></a>
+    </div>
+</nav>
+
+
+<div id="offcanvas-push" uk-offcanvas="mode: push; overlay: true">
+    <div class="uk-offcanvas-bar">
+
+        <button class="uk-offcanvas-close" type="button" uk-close></button>
+        <img style="margin-bottom: 40px;" src="{{web_setting.logo.path}}" alt="">
+        <ul class="uk-nav uk-nav-default">
+            {% partial 'site/nav' items=top_nav %}
+
+            <li class="cart_header">
+
+                {% partial 'cart/header' %}
+
+            </li>
+        </ul>
+
+    </div>
+</div>
+<!-- End NavBar -->

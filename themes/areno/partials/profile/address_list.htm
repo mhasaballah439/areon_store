@@ -1,0 +1,15 @@
+[user_address]
+==
+{% if address_list %}
+{% for list in address_list %}
+<li id="item_{{list.id}}">
+    <div class="form-check mb-1">
+        <label class="form-check-label text-muted">{{list.city}}-{{list.street}}</label>
+        <a data-request="onRemoveAddress"
+           data-request-data="'id':{{list.id}}"
+           data-request-complete="$('#item_{{list.id}}').remove()"
+        ><span><i class="far fa-trash text-danger ml-3"></i></span></a>
+    </div>
+</li>
+{% endfor %}
+{% endif %}

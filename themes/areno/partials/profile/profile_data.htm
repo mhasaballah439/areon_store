@@ -1,0 +1,18 @@
+
+<h1 class="categoryTitle wow fadeInDownBig" data-wow-delay="1s">{{'Profile'|_}}</h1>
+<hr class="divider mb-0">
+<form class="mt-4" data-request="onUpdate" data-request-flash>
+    <div class="input-icon widthF">
+        <span class="fal fa-user"></span>
+        <input type="text" class="form-control" name="name" value="{{user.name}}" required placeholder="{{'Navn'|_}}">
+    </div>
+    <div class="input-icon widthF">
+        <span class="fal fa-mobile"></span>
+        <input type="text" class="form-control" name="mobile" value="{{user.mobile}}" required placeholder="{{'Mobil'|_}}">
+    </div>
+    <div class="input-icon widthF">
+        <span class="fal fa-at"></span>
+        <input type="text" class="form-control" name="email" value="{{user.email}}" placeholder="{{'Epost'|_}}">
+    </div>
+    <button class="lagre link" type="submit">{{'Lagre'|_}} <i class="fal fa-save mr-2"></i></button>
+</form>

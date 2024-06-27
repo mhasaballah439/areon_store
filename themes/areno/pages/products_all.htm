@@ -1,0 +1,143 @@
+title = "all categories Products"
+url = "products/all-categories"
+layout = "default"
+[categories]
+==
+function onEnd(){
+
+if(!empty($this->web_setting->seo_title)){
+$this->page->meta_title = !empty($this->page_detail->seo_title)? $this->page_detail->seo_title.' :: ':'';
+$this->page->meta_title.= $this->web_setting->seo_title;
+}
+elseif(!empty($this->page_detail->seo_title))  $this->page->meta_title = $this->page_detail->seo_title;
+
+if(!empty($this->page_detail->seo_description)) $this->page->meta_description =  $this->page_detail->seo_description ;
+elseif(!empty($this->web_setting->seo_description)) $this->page->meta_description =  $this->web_setting->seo_description ;
+
+if(!empty($this->page_detail->seo_keyword)) $this->page->meta_keywords =  $this->page_detail->seo_keyword;
+elseif(!empty($this->web_setting->seo_keyword)) $this->page->meta_keywords =  $this->web_setting->seo_keyword;
+}
+==
+<div class="all_products" style="margin-top: 100px;">
+    <!-- For Car Prodcuts -->
+    <div class="container-fluid">
+        <hr class="uk-divider-icon">
+        <div class="filter_wrap mb-5 ">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="uk-search uk-search-default w-100">
+                        <span uk-search-icon></span>
+                        <input class="uk-search-input text-dark" autocomplete="off" id="input" type="search"
+                               placeholder="Search">
+
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <!-- products Box Category -->
+            {% if search_products %}
+            {% for product in search_products %}
+            <div class="col-xl-2 col-lg-3 col-md-4 col-6 mb-4 mix a_{{product.slug}}">
+                <div class="wrap_box_category">
+                    <div class="uk-card">
+                        <div class="uk-card-media-top">
+                            <img class="w-100 img-responsive lazy" src=""
+                                 data-src="{{product.images[0].path}}" alt="">
+                            <span class="rig-overlay"></span>
+                            <a href=""> <span class="name_category">{{product.category.name}}</span></a>
+                            <div class="rig-text">
+                                <div class="prod-details text-center">
+                                    <span><img class="watermk" src="{{web_setting.logo.path}}" alt=""></span>
+                                    <span class="prod-name font-weight-bold">{{product.short_title}}</span>
+                                    <span class="prod-catg  d-block">
+                                            <a href="{{'product_detail'|page({slug:product.slug})}}" class="uk-margin-small-right text-white"
+                                               uk-icon="tag"></a>
+                                            {{product.category.name}}</span>
+                                    <span class="prod-price font-weight-bold">{{product.price_product|round()}} {{'Kr'|_}}</span>
+                                    {% if user %}
+                                    <div class="mt-2">
+                                        <a href="#" data-request="onAddCart"
+                                           data-request-data="'product_id':{{product.id}},'quantity':1"
+                                           data-request-update="'cart/header':'.cart_header'"
+                                           data-request-success="msg();"
+                                           class="uk-icon-button uk-margin-small-right" uk-icon="cart"></a>
+                                        <a href="{{'product_detail'|page({slug:product.slug})}}" class="uk-icon-button uk-margin-small-right" uk-icon="info"></a>
+                                    </div>
+                                    {% else %}
+                                    <div class="mt-2">
+                                        <a href="#" class="uk-icon-button uk-margin-small-right" uk-icon="cart"></a>
+                                        <a href="{{'login'|page}}" class="uk-icon-button uk-margin-small-right" uk-icon="info"></a>
+                                    </div>
+                                    {% endif %}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+            {% endif %}
+        </div>
+    </div>
+    <!-- End For Car Products -->
+</div>
+{% partial 'basic/theme' %}
+{% partial 'basic/pagination' records = search_products %}
+
+<!-- End Loader JS -->
+{% put styles %}
+<link rel="stylesheet" href="{{'assets/css/single-products.css'|theme}}">
+{% endput %}
+{% put scripts %}
+<script src='https://cdn.jsdelivr.net/jquery.mixitup/latest/jquery.mixitup.min.js'></script>
+<script>
+    $(function () {
+        $(".container-fluid").mixItUp();
+
+        var inputText;
+        var $matching = $();
+
+        // Delay function
+        var delay = (function () {
+            var timer = 0;
+            return function (callback, ms) {
+                clearTimeout(timer);
+                timer = setTimeout(callback, ms);
+            };
+        })();
+        $("#input").keyup(function () {
+            // Delay function invoked to make sure user stopped typing
+            delay(function () {
+                inputText = $("#input").val().toLowerCase();
+
+                // Check to see if input field is empty
+                if ((inputText.length) > 0) {
+                    $('.mix').each(function () {
+                        $this = $("this");
+
+                        // add item to be filtered out if input text matches items inside the title
+                        console.log($(this));
+                        if ($(this).find('.name_category').text().toLowerCase().match(inputText)) {
+                            $matching = $matching.add(this);
+                        }
+                        else {
+                            // removes any previously matched item
+                            $matching = $matching.not(this);
+                        }
+                    });
+                    $(".container-fluid").mixItUp('filter', $matching);
+                }
+
+                else {
+                    // resets the filter to show all item if input is empty
+                    $(".container-fluid").mixItUp('filter', 'all');
+                }
+            }, 200);
+        });
+    })
+</script>
+
+{% endput %}

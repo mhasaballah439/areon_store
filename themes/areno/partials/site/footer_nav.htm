@@ -1,0 +1,6 @@
+
+{% for item in items   %}
+<li class="link">
+    <a href="{{  item.getLinkHref ? item.getLinkHref : '#' }}">{{item.title}}</a>
+</li>
+{% endfor %}

@@ -1,0 +1,18 @@
+scopes:
+
+  status:
+    label: Status
+    modelClass: Coolnet\Orders\Models\Status
+    conditions: status_id in (:filtered)
+  delivery:
+    label: Delivery
+    type: group
+    conditions: delivery in (:filtered)
+    options:
+      Takeaway: Takeaway
+      Delivery: Delivery
+  paid:
+    label: Is Paid
+    type: checkbox
+    default: 1
+    conditions: is_payment = 1

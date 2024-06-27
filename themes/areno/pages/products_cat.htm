@@ -1,0 +1,166 @@
+title = "Products"
+url = "product-category/:slug"
+layout = "default"
+
+[products]
+slug = '{{:slug}}'
+==
+function onEnd(){
+
+if(!empty($this->web_setting->seo_title)){
+$this->page->meta_title = !empty($this->page_detail->seo_title)? $this->page_detail->seo_title.' :: ':'';
+$this->page->meta_title.= $this->web_setting->seo_title;
+}
+elseif(!empty($this->page_detail->seo_title))  $this->page->meta_title = $this->page_detail->seo_title;
+
+if(!empty($this->page_detail->seo_description)) $this->page->meta_description =  $this->page_detail->seo_description ;
+elseif(!empty($this->web_setting->seo_description)) $this->page->meta_description =  $this->web_setting->seo_description ;
+
+if(!empty($this->page_detail->seo_keyword)) $this->page->meta_keywords =  $this->page_detail->seo_keyword;
+elseif(!empty($this->web_setting->seo_keyword)) $this->page->meta_keywords =  $this->web_setting->seo_keyword;
+}
+==
+<div class="all_products" style="margin-top: 100px;">
+    <!-- For Car Prodcuts -->
+    <div class="container-fluid">
+        <hr class="uk-divider-icon">
+        <h3 class="title_fonts mt-5 ml-2">{{category.name}}</h3>
+        <div class="filter_wrap mb-5 ">
+            <div class="row">
+                <div class="col-lg-9">
+                    <div class="tabs">
+                        <div class="tab-item active filter" data-filter="all">
+                            {{'All'|_}}
+                        </div>
+
+                        {% if product_category %}
+                        {% for category in product_category %}
+                        <div class="tab-item filter" data-filter=".a_{{category.slug}}">
+                            {{category.name}}
+                        </div>
+                        {% endfor %}
+                        {% endif %}
+                    </div>
+                </div>
+                <div class="col-lg-3">
+                    <div class="uk-search uk-search-default w-100 pr-lg-5 pr-0">
+                        <span uk-search-icon></span>
+                        <input class="uk-search-input text-dark" autocomplete="off" id="input" type="search"
+                               placeholder="Search">
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <div class="row">
+            <!-- products Box Category -->
+            {% if product_category %}
+            {% for category in product_category %}
+            {% for product in category.products %}
+            <div class="col-xl-2 col-lg-3 col-md-4 col-6 mb-4 mix a_{{category.slug}}">
+                <div class="wrap_box_category">
+                    <div class="uk-card">
+                        <div class="uk-card-media-top">
+                            <img class="w-100 img-responsive lazy" src=""
+                                 data-src="{{product.images[0].path}}" alt="">
+                            <span class="rig-overlay"></span>
+                            <a style="display: none" class="prod-name font-weight-bold">{{product.short_title}}</a>
+                            <div class="rig-text">
+                                <a style="display: none" href=""><span class="name_category">{{str_limit(category.name,16)}}</span></a>
+                                <div class="prod-details text-center">
+                                    <span><img class="watermk" src="{{web_setting.logo.path}}" alt=""></span>
+                                    <span class="prod-name font-weight-bold">{{product.short_title}}</span>
+                                    <span class="prod-catg  d-block">
+                                            <a href="{{'product_detail'|page({slug:product.slug})}}" class="uk-margin-small-right text-white"
+                                               uk-icon="tag"></a>
+                                            {{str_limit(category.name,16)}}</span>
+                                    <span class="prod-price font-weight-bold">{{product.price_product|round()}} {{'Kr'|_}}</span>
+                                    {% if user %}
+                                    <div class="mt-2">
+                                        <a href="#" data-request="onAddCart"
+                                           data-request-data="'product_id':{{product.id}},'quantity':1"
+                                           data-request-update="'cart/header':'.cart_header'"
+                                           data-request-success="msg();"
+                                           class="uk-icon-button uk-margin-small-right" uk-icon="cart"></a>
+                                        <a href="{{'product_detail'|page({slug:product.slug})}}" class="uk-icon-button uk-margin-small-right" uk-icon="info"></a>
+                                    </div>
+                                    {% else %}
+                                    <div class="mt-2">
+                                        <a href="{{'login'|page}}" class="uk-icon-button uk-margin-small-right" uk-icon="cart"></a>
+                                        <a href="{{'product_detail'|page({slug:product.slug})}}" class="uk-icon-button uk-margin-small-right" uk-icon="info"></a>
+                                    </div>
+                                    {% endif %}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+            {% endfor %}
+            {% endif %}
+        </div>
+    </div>
+    <!-- End For Car Products -->
+</div>
+{% partial 'basic/theme' %}
+
+<!-- End Loader JS -->
+{% put styles %}
+<link rel="stylesheet" href="{{'assets/css/single-products.css'|theme}}">
+{% endput %}
+{% put scripts %}
+<script src='https://cdn.jsdelivr.net/jquery.mixitup/latest/jquery.mixitup.min.js'></script>
+<script>
+    $(function () {
+        $(".container-fluid").mixItUp();
+
+        var inputText;
+        var $matching = $();
+
+        // Delay function
+        var delay = (function () {
+            var timer = 0;
+            return function (callback, ms) {
+                clearTimeout(timer);
+                timer = setTimeout(callback, ms);
+            };
+        })();
+        $("#input").keyup(function () {
+            // Delay function invoked to make sure user stopped typing
+            delay(function () {
+                inputText = $("#input").val().toLowerCase();
+
+                // Check to see if input field is empty
+                if ((inputText.length) > 0) {
+                    $('.mix').each(function () {
+                        $this = $("this");
+
+                        // add item to be filtered out if input text matches items inside the title
+                        console.log($(this));
+                        if ($(this).find('.name_category').text().toLowerCase().match(inputText)) {
+                            $matching = $matching.add(this);
+                        }
+                        else {
+                            // removes any previously matched item
+                            $matching = $matching.not(this);
+                        }
+                    });
+                    $(".container-fluid").mixItUp('filter', $matching);
+                }
+
+                else {
+                    // resets the filter to show all item if input is empty
+                    $(".container-fluid").mixItUp('filter', 'all');
+                }
+            }, 200);
+        });
+    })
+</script>
+
+{% endput %}

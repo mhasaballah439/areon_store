@@ -1,0 +1,10 @@
+name: Pages
+form: $/coolnet/pages/models/pages/fields.yaml
+modelClass: Coolnet\Pages\Models\Pages
+defaultRedirect: coolnet/pages/pages
+create:
+    redirect: 'coolnet/pages/pages/update/:id'
+    redirectClose: coolnet/pages/pages
+update:
+    redirect: coolnet/pages/pages
+    redirectClose: coolnet/pages/pages

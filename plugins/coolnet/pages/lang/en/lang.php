@@ -1,0 +1,20 @@
+<?php return [
+    'plugin' => [
+        'name' => 'Pages',
+        'description' => 'Pages & Navs',
+    ],
+    'title' => 'Title',
+    'sub_title' => 'Sub title',
+    'active' => 'Active',
+    'top_nav' => 'Top Nav',
+    'footer_nav' => 'Footer Nav',
+    'target' => 'target',
+    'page_system' => 'Page System',
+    'text' => 'Page Text',
+    'external_url' => 'External Url',
+    'seo_title' => 'Page title',
+    'seo_keyword' => 'Page Keyword',
+    'seo_description' => 'Page Description',
+    'last_update' => 'Last Update',
+    'pages_menu' => 'Pages',
+];

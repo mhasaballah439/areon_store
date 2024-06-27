@@ -1,0 +1,15 @@
+[cart]
+[user_address]
+==
+{% if address_list %}
+{% for list in address_list %}
+<div class="radio_circle addressRowOption">
+    <input id="radio-{{list.id}}" name="radio2" type="radio" data-request="onSelectAddress"
+           data-request-data="'id':{{list.id}}" data-request-flash
+    {{list.id == cartData.cart_detail.address_id ? 'checked' : ''}}>
+    <label for="radio-{{list.id}}" class="radio-label">
+        {{list.city}},{{list.street}}
+    </label>
+</div>
+{% endfor %}
+{% endif %}

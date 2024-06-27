@@ -1,0 +1,10 @@
+name: ProductsMovement
+form: $/coolnet/products/models/productsmovement/fields.yaml
+modelClass: Coolnet\Products\Models\ProductsMovement
+defaultRedirect: coolnet/products/productsmovement
+create:
+    redirect: 'coolnet/products/productsmovement/update/:id'
+    redirectClose: coolnet/products/productsmovement
+update:
+    redirect: coolnet/products/productsmovement
+    redirectClose: coolnet/products/productsmovement

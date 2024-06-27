@@ -1,0 +1,133 @@
+/* Dark Light Color Navabr */
+body.lighed .uk-navbar-container:not(.uk-navbar-transparent) {
+  background-color: #060405cc !important;
+  transition: 0.3s linear;
+}
+
+body.darked .uk-navbar-container:not(.uk-navbar-transparent) {
+  background-color: #fffafae6 !important;
+  transition: 0.3s linear;
+}
+body.darked .uk-navbar-nav > li > a {
+  color: #16181b;
+  text-transform: uppercase;
+  transition: 0.1s ease-in-out;
+  transition-property: color, background-color;
+  font-family: "Montserrat Alternates", sans-serif;
+}
+
+body.darked .uk-navbar-toggle {
+  color: black;
+}
+body.darked .uk-logo img {
+  filter: invert(1);
+}
+body.darked .menuIcons {
+  color: black;
+}
+
+/* Dark Light Color Navabr */
+/*product box category css*/
+
+
+
+
+.img-responsive{
+    object-fit: contain;
+    display: block;
+    width: 191px;
+    height: 191px;
+    object-fit: contain;
+    border: none;
+    transform: scale(1);
+    transition: all 1s;
+    z-index: 1;
+    opacity: 1;
+
+}
+.wrap_box_category{
+    position: relative;
+    display: inline-block;
+    overflow:hidden;
+    text-align: center;
+}
+.uk-card-media-top{
+    padding: 15px 0px;
+    background-color: #00000005;
+}
+body.darked .uk-card-media-top {
+    padding: 15px 0px;
+    background-color: #00000009;
+}
+.name_category{
+    color: #938764;
+    font-size: 16px;
+    font-weight: 400;
+    display: block;
+    position: relative;
+    margin-top: 18px;
+}
+/*
+.name_category::before{
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: -5px;
+    width: 65%;
+    height: 1px;
+    background-color: #aba487;
+    margin-right: auto;
+    margin-left: auto;
+    box-shadow: 0px 0px 4px 1px #c2bba7;
+}
+*/
+
+.wrap_box_category:hover .rig-text {
+    transform: translateY(0px);
+    opacity: 0.92;
+}
+.rig-text img{
+    height: 210px;
+    object-fit: cover;
+}
+.wrap_box_category:hover .rig-overlay {
+    opacity: 0.1;
+}
+
+.wrap_box_category:hover .rig-img {
+    transform: scale(1.0);
+    opacity: 1;
+}
+
+.rig-overlay {
+    position: absolute;
+    display: block;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    margin: auto;
+    background: #fff  no-repeat center 20%;
+    background-size: 50px 50px;
+    opacity: 0;
+    filter: alpha(opacity=0);
+    transition: all 0.2s;
+    z-index: 1;
+}
+
+.rig-text {
+    display: block;
+    padding: 0 0px;
+    box-sizing: border-box;
+    position: absolute;
+    left: 0;
+    width: 100%;
+    top: 0%;
+    opacity: 0;
+    filter: alpha(opacity=0);
+    transform: translateY(30px);
+    transition: all .7s;
+    z-index: 1;
+}
+/*end */

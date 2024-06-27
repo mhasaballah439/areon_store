@@ -1,0 +1,14 @@
+columns:
+    id:
+        label: ID
+        type: number
+    main_title:
+        label: tit
+        type: text
+        searchable: true
+    active:
+        label: 'coolnet.slider::lang.active'
+        type: switch
+    updated_at:
+        label: 'Last Update'
+        type: datetime

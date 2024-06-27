@@ -1,0 +1,10 @@
+name: Slider
+form: $/coolnet/slider/models/slider/fields.yaml
+modelClass: Coolnet\Slider\Models\Slider
+defaultRedirect: coolnet/slider/slider
+create:
+    redirect: 'coolnet/slider/slider/update/:id'
+    redirectClose: coolnet/slider/slider
+update:
+    redirect: coolnet/slider/slider
+    redirectClose: coolnet/slider/slider

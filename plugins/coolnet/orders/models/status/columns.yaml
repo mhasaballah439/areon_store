@@ -1,0 +1,11 @@
+columns:
+    name:
+        label: 'coolnet.orders::lang.name'
+        type: text
+        searchable: true
+    active:
+        label: 'coolnet.orders::lang.active'
+        type: switch
+    created_at:
+        label: 'coolnet.orders::lang.created_at'
+        type: datetime

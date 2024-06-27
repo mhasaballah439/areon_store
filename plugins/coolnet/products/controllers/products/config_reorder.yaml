@@ -1,0 +1,5 @@
+title: Products
+nameFrom: title
+modelClass: Coolnet\Products\Models\Products
+toolbar:
+    buttons: reorder_toolbar

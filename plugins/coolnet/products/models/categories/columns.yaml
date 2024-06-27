@@ -1,0 +1,20 @@
+columns:
+    id:
+        label: 'coolnet.products::lang.id'
+        type: number
+    index_title:
+        label: 'coolnet.products::lang.name'
+        type: text
+    active:
+        label: 'coolnet.products::lang.active'
+        type: switch
+    created_at:
+        label: 'coolnet.products::lang.created_at'
+        type: datetime
+    deleted_at:
+        label: 'coolnet.products::lang.deleted_at'
+        type: datetime
+    name:
+        label: 'coolnet.products::lang.name'
+        type: text
+        searchable: true

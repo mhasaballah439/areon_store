@@ -1,0 +1,14 @@
+fields:
+    name:
+        label: 'coolnet.products::lang.name'
+        span: auto
+        type: text
+    active:
+        label: 'coolnet.products::lang.active'
+        span: auto
+        type: switch
+    is_main:
+        label: 'coolnet.products::lang.is_main'
+        span: auto
+        hidden: 1
+        type: switch

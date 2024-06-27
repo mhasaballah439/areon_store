@@ -1,0 +1,31 @@
+fields:
+    image:
+        label: 'coolnet.slider::lang.image'
+        mode: image
+        useCaption: true
+        thumbOptions:
+            mode: crop
+            extension: auto
+        span: auto
+        type: fileupload
+    image_small:
+        label: 'Small image'
+        mode: image
+        useCaption: true
+        thumbOptions:
+            mode: crop
+            extension: auto
+        span: auto
+        type: fileupload
+    active:
+        label: 'coolnet.slider::lang.active'
+        span: auto
+        type: checkbox
+    main_title:
+        label: 'Main Title'
+        span: full
+        type: text
+    sub_title:
+        label: 'coolnet.slider::lang.sup_title'
+        span: full
+        type: text

@@ -1,0 +1,5 @@
+title: Slider
+nameFrom: main_title
+modelClass: Coolnet\Slider\Models\Slider
+toolbar:
+    buttons: reorder_toolbar

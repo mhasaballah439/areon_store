@@ -1,0 +1,15 @@
+fields:
+    partial1:
+        span: full
+        path: ~/plugins/coolnet/orders/models/orders/_detail.htm
+        type: partial
+    status_id:
+        label: 'coolnet.orders::lang.status'
+        showSearch: true
+        span: auto
+        type: dropdown
+    warehouse_id:
+        label: 'coolnet.orders::lang.warehouse_id'
+        showSearch: true
+        span: auto
+        type: dropdown

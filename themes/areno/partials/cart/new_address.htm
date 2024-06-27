@@ -1,0 +1,45 @@
+
+<p class="address ml-2"><img class="add_address" width="80"
+                             src="https://img.icons8.com/ios/452/address--v2.png" alt="">
+    <span class="nyAddressText">{{'Ny adresse'|_}}</span>
+</p>
+<br>
+<div class="addres hideOption_toggle">
+    <div class="form">
+        <form data-request="onStoreAddress" data-request-flash
+              data-request-update="'cart/address_list':'#address_cart_list'">
+            <div class="flexwrap">
+                <div class="input-icon widthF">
+                    <span class="fal fa-road"></span>
+                    <input type="text" class="form-control" required name="city" placeholder="{{'city'|_}}">
+                </div>
+                <div class="input-icon widthF">
+                    <span class="fal fa-home"></span>
+
+                    <input type="text" class="form-control" required name="street" placeholder="{{'street'|_}}">
+                </div>
+                <div class="input-icon widthF">
+                    <span class="fal fa-mailbox"></span>
+                    <input type="text" class="form-control" required name="building" placeholder="{{'building'|_}}">
+                </div>
+                <div class="input-icon widthF">
+                    <span class="fal fa-mailbox"></span>
+                    <input type="text" class="form-control" required name="full_name" placeholder="{{'Full name'|_}}">
+                </div>
+                <div class="input-icon widthF">
+                    <span class="fal fa-mailbox"></span>
+                    <input type="text" class="form-control" required name="mobile" placeholder="{{'mobile'|_}}">
+                </div>
+
+                <div class="input-icon widthF">
+                    <span class="fal fa-mailbox"></span>
+                    <input type="text" class="form-control" required name="zip_code" placeholder="{{'zip_code'|_}}">
+                </div>
+            </div>
+
+            <button class="btn btn-outline-success btn-pill"><i
+                class="fal fa-save mr-2"></i>
+                {{'LAGRE'|_}}</button>
+        </form>
+    </div>
+</div>

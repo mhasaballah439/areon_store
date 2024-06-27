@@ -1,0 +1,5 @@
+title: Pages
+modelClass: Coolnet\Pages\Models\Pages
+nameFrom: title
+toolbar:
+    buttons: reorder_toolbar

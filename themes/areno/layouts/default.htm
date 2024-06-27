@@ -1,0 +1,62 @@
+description = "Default layout"
+[web_setiing]
+[account]
+[cart]
+
+[session]
+security = "all"
+
+[menu_detail]
+==
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- FavIcons Imports -->
+    <link rel="shortcut icon" href="{{web_setting.fav_icon.path}}" type="image/x-icon">
+    <title>Areon - {{this.page.title}}</title>
+    <!-- Import Css Files -->
+    <link rel="stylesheet" href="{{'assets/css/FontAwosome5.css'|theme}}">
+    <link rel="stylesheet" href="{{'assets/css/animationCss.css'|theme}}">
+    <link rel="stylesheet" href="{{'assets/css/nice-select.css'|theme}}">
+    <link rel="stylesheet" href="{{'assets/css/bootstrap.min.css'|theme}}">
+    <link rel="stylesheet" href="{{'assets/css/uikit.min.css'|theme}}">
+    <link rel="stylesheet" href="{{'assets/css/header.css'|theme}}">
+    <link rel="stylesheet" href="{{'assets/css/footer.css'|theme}}">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
+    <!-- End Css Files -->
+    {% styles %}
+</head>
+
+<body>
+
+    <header>
+    {% partial 'site/header' %}
+    </header>
+
+    {% page %}
+
+    <footer>
+    {% partial 'site/footer' %}
+    </footer>
+<!-- Import Js Files -->
+<script src="{{'assets/js/jquery-3.3.1.min.js'|theme}}"></script>
+<script src="{{'assets/js/jquery.lazy.min.js'|theme}}"></script>
+<script src="{{'assets/js/popper.js'|theme}}"></script>
+<script src="{{'assets/js/bootstrap.min.js'|theme}}"></script>
+<script src="{{'assets/js/wow.min.js'|theme}}"></script>
+<script src="{{'assets/js/uikit.min.js'|theme}}"></script>
+<script src="{{'assets/js/uikit-icons.min.js'|theme}}"></script>
+<script src="{{'assets/js/gsap.js'|theme}}"></script>
+<script src="{{'assets/js/header.js'|theme}}"></script>
+<script src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+{% framework extras %}
+{% scripts %}
+</body>
+
+</html>
+
+

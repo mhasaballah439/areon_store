@@ -1,0 +1,76 @@
+fields:
+    main_cat:
+        label: 'coolnet.products::lang.main_cat'
+        showSearch: true
+        emptyOption: 'Please select'
+        span: auto
+        type: dropdown
+    sub_cat:
+        label: 'coolnet.products::lang.sub_cat'
+        showSearch: true
+        emptyOption: 'Please select'
+        span: auto
+        dependsOn: main_cat
+        type: dropdown
+    cat_id:
+        label: 'coolnet.products::lang.category'
+        showSearch: true
+        emptyOption: 'Please select'
+        span: auto
+        dependsOn: sub_cat
+        type: dropdown
+    short_title:
+        label: 'coolnet.products::lang.short_title'
+        span: auto
+        type: text
+    title:
+        label: 'coolnet.products::lang.title'
+        span: full
+        type: text
+    desc:
+        label: Description
+        size: small
+        span: full
+        type: richeditor
+    section1:
+        label: 'coolnet.products::lang.active'
+        span: full
+        type: section
+    active:
+        label: 'coolnet.products::lang.active'
+        span: auto
+        type: checkbox
+    product_code:
+        label: 'Product code'
+        span: auto
+        type: text
+tabs:
+    fields:
+        price_user:
+            label: 'coolnet.products::lang.price_user'
+            span: auto
+            default: '0'
+            type: number
+            tab: 'coolnet.products::lang.prices'
+        price_company:
+            label: 'coolnet.products::lang.price_company'
+            span: auto
+            default: '0'
+            type: number
+            tab: 'coolnet.products::lang.prices'
+        offer_price:
+            label: 'Offer price'
+            span: auto
+            default: '0'
+            type: number
+            tab: 'coolnet.products::lang.prices'
+        images:
+            label: 'coolnet.products::lang.images'
+            mode: image
+            useCaption: true
+            thumbOptions:
+                mode: crop
+                extension: auto
+            span: auto
+            type: fileupload
+            tab: 'coolnet.products::lang.images'

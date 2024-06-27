@@ -1,0 +1,94 @@
+.flex-wrap{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+footer .upfooter{
+    padding: 60px 40px;
+     font-family: "Montserrat Alternates", sans-serif;
+}
+body.darked .upfooter{
+    background-color: #0f0e0e;
+    border-top: 2px solid #cab671;
+    font-family: "Montserrat Alternates", sans-serif;
+}
+body.lighed .upfooter{
+    background-color: #2d2d2b;
+    border-top: 2px solid #cab671;
+    font-family: "Montserrat Alternates", sans-serif;
+}
+
+
+body.darked .uk-list-disc>*, .uk-list-hyphen>*, .uk-list-square>* {
+    padding-left: 30px;
+    color: #dddada;
+}
+
+body.lighed .uk-list-disc>*, .uk-list-hyphen>*, .uk-list-square>* {
+    padding-left: 30px;
+    color: #dddada;
+}
+body.darked .uk-list-secondary>::before {
+    color: #cab671!important;
+}
+body.lighed .uk-list-secondary>::before {
+    color: #cab671!important;
+}
+
+body.darked footer h4{
+    color: white;
+    font: 700;
+    font-family: "Montserrat Alternates", sans-serif;
+}
+body.lighed footer h4{
+    color: white;
+    font: 700;
+    font-family: "Montserrat Alternates", sans-serif;
+}
+
+
+ footer .uk-icon{
+    color: #cab671!important;
+}
+
+a:hover{
+    text-decoration: none;
+}
+
+ footer .company-info p , footer  a {
+
+        color: #dddada!important;
+    }
+
+body.darked  .bottom_footer{
+    background-color: #16181b;
+    padding: 14px 10px;
+    color: white;
+    text-align: center;
+}
+body.lighed .bottom_footer {
+    background-color: #060405cc;
+    padding: 14px 10px;
+    color: white;
+    text-align: center;
+}
+
+
+@media(max-width:992px)
+{
+    .flex-wrap {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-start;
+    }
+   .uk-list-disc>*, .uk-list-hyphen>*, .uk-list-square>* {
+        padding-left: 30px;
+        color: #dddada;
+        font-size: 13px;
+    }
+    .create_by span{
+        font-size: 13px;
+    }
+}

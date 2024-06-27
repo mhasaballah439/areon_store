@@ -1,0 +1,10 @@
+name: WarehousesData
+form: $/coolnet/products/models/wharehouses/fields.yaml
+modelClass: Coolnet\Products\Models\Wharehouses
+defaultRedirect: coolnet/products/warehousesdata
+create:
+    redirect: 'coolnet/products/warehousesdata/update/:id'
+    redirectClose: coolnet/products/warehousesdata
+update:
+    redirect: coolnet/products/warehousesdata
+    redirectClose: coolnet/products/warehousesdata

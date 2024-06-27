@@ -1,0 +1,30 @@
+columns:
+    product_id:
+        label: 'coolnet.products::lang.plugin.name'
+        type: text
+        searchable: true
+        select: short_title
+        relation: product
+    wharehouse_id:
+        label: 'coolnet.products::lang.wharehouse_from'
+        type: text
+        select: name
+        relation: warehouse
+    to_warehouse:
+        label: 'coolnet.products::lang.to_warehouse'
+        type: text
+        select: name
+        relation: warehouse_to
+    qty:
+        label: 'coolnet.products::lang.qty'
+        type: number
+    employee_name:
+        label: 'coolnet.products::lang.name'
+        type: text
+        searchable: true
+    created_at:
+        label: 'coolnet.products::lang.created_at'
+        type: datetime
+    move_type:
+        label: 'coolnet.products::lang.move_type'
+        type: text

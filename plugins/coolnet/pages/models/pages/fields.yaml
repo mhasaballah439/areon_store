@@ -1,0 +1,98 @@
+fields:
+    title:
+        label: 'coolnet.pages::lang.title'
+        span: auto
+        required: 1
+        type: text
+    sub_title:
+        label: 'coolnet.pages::lang.sub_title'
+        span: full
+        type: text
+tabs:
+    fields:
+        active:
+            label: 'coolnet.pages::lang.active'
+            span: auto
+            type: checkbox
+            tab: Options
+        top_nav:
+            label: 'coolnet.pages::lang.top_nav'
+            span: auto
+            type: checkbox
+            tab: Options
+        footer_nav:
+            label: 'coolnet.pages::lang.footer_nav'
+            span: auto
+            type: checkbox
+            tab: Options
+        target:
+            label: 'coolnet.pages::lang.target'
+            options:
+                _self: 'In the same tab'
+                _black: 'In new tab'
+            showSearch: true
+            span: left
+            type: dropdown
+            tab: Options
+        page_id:
+            label: 'coolnet.pages::lang.page_system'
+            showSearch: true
+            span: auto
+            placeholder: 'Select Page'
+            required: 1
+            type: dropdown
+            tab: Options
+        detail:
+            label: 'coolnet.pages::lang.text'
+            size: large
+            span: full
+            type: richeditor
+            tab: Options
+            dependsOn: page_id
+        external_url:
+            label: 'coolnet.pages::lang.external_url'
+            span: full
+            type: text
+            tab: Options
+            dependsOn: page_id
+        seo_title:
+            label: 'coolnet.pages::lang.seo_title'
+            span: full
+            type: text
+            tab: SEO
+        sey_keyword:
+            label: 'coolnet.pages::lang.seo_keyword'
+            span: full
+            type: text
+            tab: SEO
+        seo_desc:
+            label: 'coolnet.pages::lang.seo_description'
+            size: ''
+            span: full
+            type: textarea
+            tab: SEO
+        font_aws:
+            label: 'Font Awesome'
+            span: auto
+            type: text
+            tab: Icon
+        icon:
+            label: Icon
+            mode: image
+            useCaption: true
+            thumbOptions:
+                mode: crop
+                extension: auto
+            span: auto
+            type: fileupload
+            tab: Icon
+        image:
+            label: Image
+            span: right
+            mode: image
+            useCaption: true
+            thumbOptions:
+                mode: crop
+                extension: auto
+            type: fileupload
+            tab: Icon

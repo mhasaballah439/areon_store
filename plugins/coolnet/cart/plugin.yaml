@@ -1,0 +1,6 @@
+plugin:
+    name: 'coolnet.cart::lang.plugin.name'
+    description: 'coolnet.cart::lang.plugin.description'
+    author: coolnet
+    icon: oc-icon-adjust
+    homepage: ''

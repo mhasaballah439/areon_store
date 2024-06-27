@@ -1,0 +1,55 @@
+[cart]
+==
+<button class="uk-modal-close-default" type="button" uk-close></button>
+<p>
+<div class="invoice" style="margin-top: 25px;">
+    <div class="invoice-card">
+        <div class="invoice-title">
+            <div id="main-title">
+                <h4>{{'Din bestilling'|_}}</h4>
+            </div>
+
+            <span id="date">{{'now'|date('d/m/Y')}}</span>
+        </div>
+
+        <div class="invoice-details">
+            <table class="invoice-table">
+                <thead>
+                <tr>
+                    <td>{{'PRODUCT'|_}}</td>
+                    <td>{{'UNIT'|_}}</td>
+                    <td>{{'PRICE'|_}}</td>
+                </tr>
+                </thead>
+
+                <tbody>
+                {% if cartData.getItems %}
+                {% for item in cartData.getItems %}
+                <tr class="row-data">
+                    <td>{{item.product ? item.product.short_title : ''}}</td>
+                    <td id="unit">{{item.quantity}}</td>
+                    <td>{{item.item_total_round}}</td>
+                </tr>
+                {% endfor %}
+                {% endif %}
+                </tbody>
+            </table>
+        </div>
+        <div class="invoice-details offers">
+            <table class="invoice-table">
+                <tbody>
+                <tr class="row-data">
+                    <td>{{'sub total'|_}}</td>
+                    <td id="optinal"></td>
+                    <td>{{cartData.sub_total_round}} {{'kr'|_}}</td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="invoice-footer">
+            <span class="total">{{'Total'|_}}</span>
+            <span class="total_price">{{cartData.total_round}} {{'kr'|_}}</span>
+        </div>
+    </div>
+</div>
+</p>

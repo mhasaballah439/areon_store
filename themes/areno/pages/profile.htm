@@ -1,0 +1,168 @@
+title = "profile"
+url = "/profile"
+layout = "default"
+
+[session]
+security = "user"
+
+redirect = "home"
+paramCode = "code"
+[user_address]
+[user_orders]
+==
+function onStart(){
+if(!Auth::check())
+return redirect('/login');
+}
+function onEnd(){
+
+if(!empty($this->web_setting->seo_title)){
+$this->page->meta_title = !empty($this->page_detail->seo_title)? $this->page_detail->seo_title.' :: ':'';
+$this->page->meta_title.= $this->web_setting->seo_title;
+}
+elseif(!empty($this->page_detail->seo_title))  $this->page->meta_title = $this->page_detail->seo_title;
+
+if(!empty($this->page_detail->seo_description)) $this->page->meta_description =  $this->page_detail->seo_description ;
+elseif(!empty($this->web_setting->seo_description)) $this->page->meta_description =  $this->web_setting->seo_description ;
+
+if(!empty($this->page_detail->seo_keyword)) $this->page->meta_keywords =  $this->page_detail->seo_keyword;
+elseif(!empty($this->web_setting->seo_keyword)) $this->page->meta_keywords =  $this->web_setting->seo_keyword;
+}
+==
+<!-- = = = = == = ==  = == = Start Profile  Content Html = = = == = = =  -->
+<div class="profileWrap">
+    <div class="sideUi">
+        <div class="container">
+            <div class="row mt-5">
+                <div class="col-xl-3 col-lg-4 col-md-5 col-12">
+                    <!-- sideBar Profile -->
+                    <div class="box">
+                        <div class="profile_wrap">
+                            <div class="profile_wrap__header navigation__item square active link">
+                                <span></span>
+                                <div class="calendar-icon">
+                                    <i class="fal fa-user"></i>
+                                </div>
+                                <div class="check-info">
+                                    <b>{{'Profile'|_}}</b>
+                                </div>
+
+
+
+                            </div>
+                            <div class="profile_wrap__header navigation__item square link">
+                                <span></span>
+                                <div class="calendar-icon">
+                                    <i class="fal fa-spray-can"></i>
+                                </div>
+                                <div class="check-info">
+                                    <b>{{'Min Order'|_}}</b>
+                                </div>
+                            </div>
+                            <div class="profile_wrap__header navigation__item square link">
+                                <span></span>
+                                <div class="calendar-icon">
+                                    <i class="fal fa-map-marker-alt"></i>
+                                </div>
+                                <div class="check-info">
+                                    <b>{{'Min Address'|_}}</b>
+                                </div>
+
+                            </div>
+                            <div class="profile_wrap__header navigation__item square link">
+                                <span></span>
+                                <div class="calendar-icon">
+                                    <i class="fal fa-lock-alt"></i>
+                                </div>
+                                <div class="check-info">
+                                    <b>{{'Bytte passord'|_}}</b>
+                                </div>
+
+                            </div>
+                            <div class="profile_wrap__header navigation__item square link">
+                                <span></span>
+                                <div class="calendar-icon">
+                                    <i class="fal fa-trash"></i>
+                                </div>
+                                <div class="check-info">
+                                    <b>{{'Slett konto'|_}}</b>
+                                </div>
+
+                            </div>
+                            <a href="#" class="text-dark link" data-request="onLogout" data-request-data="redirect:'/'">
+                                <div class="profile_wrap__header">
+                                    <div class="calendar-icon ott">
+                                        <i class="fal fa-sign-out-alt"></i>
+                                    </div>
+                                    <div class="check-info">
+                                        <b>{{'Logg ut'|_}}</b>
+                                    </div>
+
+                                </div>
+                            </a>
+
+                        </div>
+                    </div>
+                </div>
+                <!-- Tabs Content  -->
+                <div class="col-xl-9 col-lg-8 col-md-7 col-12 mt-3">
+                    <div class="tabsProfile profileUser active">
+                        {% partial 'profile/profile_data' %}
+                    </div>
+                    <div class="tabsProfile minOrder">
+                        <div class="row">
+                            {% partial 'profile/orders' %}
+                            <!-- end row  -->
+                        </div>
+
+                    </div>
+                    <div class="tabsProfile minAddress">
+                        <div class="wrapAddrss">
+                            <h1 class="categoryTitle">{{'Min adresse'|_}}</h1>
+                            <hr class="divider mb-0">
+                            <ul class="uk-list mb-4" id="address_list">
+                                <!-- First Address Added -->
+                               {% partial 'profile/address_list' %}
+                            </ul>
+                            <div class="form">
+                                {% partial 'profile/add_address' %}
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tabsProfile changePass">
+                        {% partial 'profile/change_password' %}
+                    </div>
+                    <div class="tabsProfile deleteAccount">
+                        {% partial 'profile/delete_account' %}
+                    </div>
+                </div>
+            </div>
+
+            <!-- button open sidebar on mobile screen -->
+            <span class="openSide d-md-none d-block wow tada" data-wow-iteration="infinite" data-wow-duration="2s"><i class="fal fa-user-cog mr-2"></i>{{'PROFILE'|_}}</span>
+        </div>
+
+    </div>
+</div>
+{% partial 'basic/theme' %}
+{% put styles %}
+<link rel='stylesheet' href='https://cdn.jsdelivr.net/npm/intl-tel-input@17.0.3/build/css/intlTelInput.css'>
+<link rel="stylesheet" href="{{'assets/css/profile.css'|theme}}">
+{% endput %}
+
+{% put scripts %}
+<script src='https://cdn.jsdelivr.net/npm/intl-tel-input@17.0.3/build/js/intlTelInput.js'></script>
+<script src="{{'assets/js/profile.js'|theme}}"></script>
+<script>
+    wow = new WOW(
+        {
+            boxClass:'wow',      // default
+            animateClass:'animated', // default
+            mobile:true,       // default
+            live: true        // default
+        }
+    )
+    wow.init();
+</script>
+
+{% endput %}

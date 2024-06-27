@@ -1,0 +1,62 @@
+title = "Categories products"
+url = "all-products"
+layout = "default"
+[categories]
+==
+function onEnd(){
+
+if(!empty($this->web_setting->seo_title)){
+$this->page->meta_title = !empty($this->page_detail->seo_title)? $this->page_detail->seo_title.' :: ':'';
+$this->page->meta_title.= $this->web_setting->seo_title;
+}
+elseif(!empty($this->page_detail->seo_title))  $this->page->meta_title = $this->page_detail->seo_title;
+
+if(!empty($this->page_detail->seo_description)) $this->page->meta_description =  $this->page_detail->seo_description ;
+elseif(!empty($this->web_setting->seo_description)) $this->page->meta_description =  $this->web_setting->seo_description ;
+
+if(!empty($this->page_detail->seo_keyword)) $this->page->meta_keywords =  $this->page_detail->seo_keyword;
+elseif(!empty($this->web_setting->seo_keyword)) $this->page->meta_keywords =  $this->web_setting->seo_keyword;
+}
+==
+<div class="all_products" style="margin-top: 100px;">
+    {% if categories_list %}
+    <!-- For Car Prodcuts -->
+    {% for category in categories_list %}
+    <div class="container-fluid">
+        <hr class="uk-divider-icon">
+
+        <h3 class="title_fonts mt-5 ml-2">{{category.name}} </h3>
+        <div class="row">
+            {% if category.getChildCount %}
+            {% for sup_cat in category.getChildren %}
+            <!-- products Box Category -->
+            <div class="col-xl-2 col-lg-3 col-md-4 col-6 mb-4">
+                <a  href="{{'products_cat'|page({slug:sup_cat.slug})}}">
+                    <div class="wrap_box_category">
+                        <div class="uk-card">
+                            <div class="uk-card-media-top">
+                                <img class="w-100 img-responsive lazy"  src="" data-src="{{sup_cat.image.path}}" alt="">
+                                <span class="rig-overlay"></span>
+                                <span class="name_category">{{sup_cat.name}}</span>
+                                <span class="rig-text"><img src="{{web_setting.overlay.path}}"></span>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <!-- end Box Category -->
+            {% endfor %}
+            {% endif %}
+        </div>
+    </div>
+    {% endfor %}
+    <!-- End For Car Products -->
+    {% endif %}
+</div>
+
+{% partial 'basic/theme' %}
+
+{% put styles %}
+<link rel="stylesheet" href="{{'assets/css/prodcuts.css'|theme}}">
+{% endput %}
+

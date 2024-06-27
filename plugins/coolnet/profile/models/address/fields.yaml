@@ -1,0 +1,30 @@
+fields:
+    user_id:
+        label: 'coolnet.profile::lang.user'
+        showSearch: true
+        span: auto
+        type: dropdown
+    full_name:
+        label: 'coolnet.profile::lang.full_name'
+        span: auto
+        type: text
+    mobile:
+        label: 'coolnet.profile::lang.mobile'
+        span: auto
+        type: number
+    city:
+        label: 'coolnet.profile::lang.city'
+        span: auto
+        type: text
+    street:
+        label: 'coolnet.profile::lang.street'
+        span: auto
+        type: text
+    building:
+        label: 'coolnet.profile::lang.building'
+        span: auto
+        type: text
+    zip_code:
+        label: 'coolnet.profile::lang.zip_code'
+        span: auto
+        type: text

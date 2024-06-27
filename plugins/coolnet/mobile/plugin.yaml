@@ -1,0 +1,6 @@
+plugin:
+    name: 'coolnet.mobile::lang.plugin.name'
+    description: 'coolnet.mobile::lang.plugin.description'
+    author: coolnet
+    icon: oc-icon-adjust
+    homepage: ''

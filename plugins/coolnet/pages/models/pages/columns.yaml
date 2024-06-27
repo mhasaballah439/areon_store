@@ -1,0 +1,16 @@
+columns:
+    title:
+        label: 'coolnet.pages::lang.title'
+        type: text
+    active:
+        label: 'coolnet.pages::lang.active'
+        type: switch
+    top_nav:
+        label: 'coolnet.pages::lang.top_nav'
+        type: switch
+    footer_nav:
+        label: 'coolnet.pages::lang.footer_nav'
+        type: switch
+    updated_at:
+        label: 'coolnet.pages::lang.last_update'
+        type: datetime

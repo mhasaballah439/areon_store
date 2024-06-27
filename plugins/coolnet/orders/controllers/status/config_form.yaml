@@ -1,0 +1,10 @@
+name: Status
+form: $/coolnet/orders/models/status/fields.yaml
+modelClass: Coolnet\Orders\Models\Status
+defaultRedirect: coolnet/orders/status
+create:
+    redirect: 'coolnet/orders/status/update/:id'
+    redirectClose: coolnet/orders/status
+update:
+    redirect: coolnet/orders/status
+    redirectClose: coolnet/orders/status

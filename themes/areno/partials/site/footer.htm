@@ -1,0 +1,45 @@
+<div class="row upfooter">
+    <div class="col-lg-4">
+        <div class="company-info">
+            <img src="{{web_setting.footer_logo.path}}" alt="">
+            <p>
+                {{web_setting.footer_text|raw}}
+            </p>
+        </div>
+    </div>
+    <div class="col-lg-4">
+        <div class="flex-wrap">
+            <div class="text-left pr-md-5">
+                <h4>{{'Links'|_}}</h4>
+            </div>
+
+            <ul class="uk-list uk-list-disc uk-list-secondary mt-0">
+                {% partial 'site/footer_nav' items=footer_nav %}
+            </ul>
+        </div>
+
+    </div>
+    <div class="col-lg-4">
+        <div >
+            <div>
+                <h4>{{'CONTACT INFO'|_}}</h4>
+            </div>
+
+            <ul class="uk-list uk-list-disc uk-list-secondary">
+                <li><span class="mr-2" uk-icon="icon: location; ratio: 1"></span> {{web_setting.address}}</li>
+                <li  class="link" ><span class="mr-2" uk-icon="icon: receiver; ratio: 1"></span><a href="tel:{{web_setting.phone}}">{{web_setting.phone}}</a></li>
+                <li  class="link"><span class="mr-2" uk-icon="icon: mail; ratio: 1"></span><a href="{{web_setting.email}}">{{web_setting.email}}</a> </li>
+            </ul>
+        </div>
+    </div>
+
+</div>
+<div class="row">
+    <div class="col-12">
+        <div class="bottom_footer">
+            <div class="create_by"><span>
+                {{web_setting.copyright}}
+            </span></div>
+        </div>
+    </div>
+</div>

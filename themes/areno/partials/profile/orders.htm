@@ -1,0 +1,82 @@
+<div class="orderDate w-100 pl-md-4 pl-3 pr-3">
+    <hr class="divider mb-0">
+    <div class="container pl-0">
+        <div class="row">
+            {% if orders_list %}
+            {% for list in orders_list %}
+            <div class="col-12 mt-2 mb-2">
+                <a class="orderlink link" data-toggle="modal" data-target="#order_{{list.id}}">
+                    <div class="order d-flex justify-content-start">
+                        <div class="order_num">{{list.created_at|date('d')}}</div>
+                        <div class="order_id pl-4">{{list.code}}</div>
+                        <div class="right_num w-100 text-right pr-2">{{list.total}},-</div>
+                    </div>
+                </a>
+            </div>
+            {% endfor %}
+            {% endif %}
+        </div>
+    </div>
+    <!-- Next Month -->
+
+</div>
+{% for orderData in orders_list %}
+<div class="modal fade" id="order_{{orderData.id}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-xl" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="col-12 mt-4">
+                    <div class="ordre">
+                        <div class="container">
+                            <h3 class="text-dark mb-3">{{'Order'|_}} #{{orderData.code}}</h3>
+                            <table class="table table-bordered table-striped table-responsive-stack"  id="tableOne">
+                                <thead class="thead-dark">
+                                <tr>
+                                    <th class="text-left">{{'Name'|_}}</th>
+                                    <th class="text-center">{{'Qty'|_}}</th>
+                                    <th class="text-center">{{'Price'|_}}</th>
+                                    <th class="text-center">{{'Total'|_}}</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                {% for detail in orderData.detailData %}
+                                <tr>
+                                    <td class="text-left">{{detail.product_name}}</td>
+                                    <td class="text-center">{{detail.qty}}</td>
+                                    <td class="text-center">{{detail.price}}</td>
+                                    <td class="text-center">{{(detail.sub_total_product > 0 ? detail.sub_total_product : 0)}}</td>
+                                </tr>
+                                {% endfor %}
+                                </tbody>
+                            </table>
+
+                            <div class="totalInvoice mb-3">
+                                <div class="lineInvoice" style="display:flex;justify-content: space-between;">
+                                    <p>{{'Sub total'|_}}</p> <p class="valueIn"><strong>{{orderData.sub_total}} {{'JD'|_}}</strong></p>
+                                </div>
+                                <div class="lineInvoice" style="display:flex;justify-content: space-between;">
+                                    <p><strong>{{'Payment method'|_}}</strong> </p><p class="valueIn"><strong>{{orderData.payment}}</strong></p>
+                                </div>
+                                <div class="lineInvoice" style="display:flex;justify-content: space-between;">
+                                    <p> <strong style="color: #0a001f;font-size: large">{{'Total'|_}}</strong>
+                                    </p><p class="valueIn"><strong style="color: #0a001f;font-size: large">
+                                    {{orderData.total}} </strong></p>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- /.container -->
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">{{'close'|_}}</button>
+            </div>
+        </div>
+    </div>
+</div>
+{% endfor %}

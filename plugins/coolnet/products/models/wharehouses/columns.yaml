@@ -1,0 +1,14 @@
+columns:
+    id:
+        label: 'coolnet.products::lang.id'
+        type: number
+    name:
+        label: 'coolnet.products::lang.name'
+        type: text
+        searchable: true
+    active:
+        label: 'coolnet.products::lang.active'
+        type: switch
+    is_main:
+        label: 'coolnet.products::lang.is_main'
+        type: switch

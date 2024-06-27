@@ -1,0 +1,41 @@
+<div class="scoreboard">
+    <div data-control="toolbar">
+        <div class="scoreboard-item control-chart" data-control="chart-bar">
+            <ul>
+                <li data-color="#95b753">Web <span><?= $web_order_count ?></span></li>
+            </ul>
+        </div>
+
+        <div class="scoreboard-item title-value">
+            <h4>Total Orders</h4>
+            <p><?= $total_order ?></p>
+            <p class="description">Kr</p>
+        </div>
+
+
+        <div class="scoreboard-item title-value">
+            <h4>Total Web Orders</h4>
+            <p><?= $total_web_orders ?></p>
+            <p class="description">Kr</p>
+        </div>
+
+    </div>
+</div>
+<?= $this->listRender() ?>
+<style>
+    .modal-content {
+        padding-bottom: 50px !important;
+        padding-top: 33px !important;
+    }
+
+    .modal-dialog {
+        width: 800px !important;
+    }
+
+    .button.close {
+        position: absolute !important;
+        right: 7px !important;
+        top: -31px !important;
+    }
+</style>
+

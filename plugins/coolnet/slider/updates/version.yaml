@@ -1,0 +1,62 @@
+1.0.1:
+    - 'Initialize plugin.'
+1.0.2:
+    - 'Created table coolnet_slider_data'
+    - builder_table_create_coolnet_slider_data.php
+1.0.3:
+    - 'Updated table coolnet_slider_data'
+    - builder_table_update_coolnet_slider_data.php
+1.0.4:
+    - 'Updated table coolnet_slider_data'
+    - builder_table_update_coolnet_slider_data_2.php
+1.0.5:
+    - 'Updated table coolnet_slider_data'
+    - builder_table_update_coolnet_slider_data_3.php
+1.0.6:
+    - 'Updated table coolnet_slider_data'
+    - builder_table_update_coolnet_slider_data_4.php
+1.0.7:
+    - 'Updated table coolnet_slider_data'
+    - builder_table_update_coolnet_slider_data_5.php
+1.0.8:
+    - 'Updated table coolnet_slider_data'
+    - builder_table_update_coolnet_slider_data_6.php
+1.0.9:
+    - 'Updated table coolnet_slider_data'
+    - builder_table_update_coolnet_slider_data_7.php
+1.0.10:
+    - 'Updated table coolnet_slider_data'
+    - builder_table_update_coolnet_slider_data_8.php
+1.0.11:
+    - 'Updated table coolnet_slider_data'
+    - builder_table_update_coolnet_slider_data_9.php
+1.0.12:
+    - 'Updated table coolnet_slider_data'
+    - builder_table_update_coolnet_slider_data_10.php
+1.0.13:
+    - 'Updated table coolnet_slider_data'
+    - builder_table_update_coolnet_slider_data_11.php
+1.0.14:
+    - 'Updated table coolnet_slider_data'
+    - builder_table_update_coolnet_slider_data_12.php
+1.0.15:
+    - 'Updated table coolnet_slider_data'
+    - builder_table_update_coolnet_slider_data_13.php
+1.0.16:
+    - 'Updated table coolnet_slider_data'
+    - builder_table_update_coolnet_slider_data14.php
+1.0.17:
+    - 'Updated table coolnet_slider_data'
+    - builder_table_update_coolnet_slider_data_11.php
+1.0.18:
+    - 'Updated table coolnet_slider_data'
+    - builder_table_update_coolnet_slider_data_12.php
+1.0.19:
+    - 'Drop table coolnet_slider_data'
+    - builder_table_delete_coolnet_slider_data.php
+1.0.20:
+    - 'Created table coolnet_slider_data'
+    - builder_table_create_coolnet_slider_data_2.php
+1.0.21:
+    - 'Updated table coolnet_slider_data'
+    - builder_table_update_coolnet_slider_data_13.php

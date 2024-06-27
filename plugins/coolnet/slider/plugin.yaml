@@ -1,0 +1,18 @@
+plugin:
+    name: 'coolnet.slider::lang.plugin.name'
+    description: 'coolnet.slider::lang.plugin.description'
+    author: Coolnet
+    icon: oc-icon-image
+    homepage: ''
+permissions:
+    coolnet.slider:
+        tab: Coolnet
+        label: 'Image Slider'
+navigation:
+    main-menu-slider:
+        label: 'coolnet.slider::lang.slider_menu'
+        url: coolnet/slider/slider
+        icon: icon-image
+        permissions:
+            - coolnet.slider
+        order: '15'

@@ -1,0 +1,286 @@
+/* Dark Light Color Navabr */
+body.lighed .uk-navbar-container:not(.uk-navbar-transparent) {
+    background-color: #060405cc !important;
+    transition: 0.3s linear;
+  }
+
+  body.darked .uk-navbar-container:not(.uk-navbar-transparent) {
+    background-color: #fffafae6 !important;
+    transition: 0.3s linear;
+  }
+  body.darked .uk-navbar-nav > li > a {
+    color: #16181b;
+    text-transform: uppercase;
+    transition: 0.1s ease-in-out;
+    transition-property: color, background-color;
+    font-family: "Montserrat Alternates", sans-serif;
+  }
+
+  body.darked .uk-navbar-toggle {
+    color: black;
+  }
+  body.darked .uk-logo img {
+    filter: invert(1);
+  }
+  body.darked .menuIcons {
+    color: black;
+  }
+
+  /* Dark Light Color Navabr */
+  /*product box category css*/
+.mix {
+    display: none;
+
+  }
+
+  .tabs {
+    display: flex;
+    position: relative;
+  }
+  .tabs .line {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 0;
+    height: 6px;
+    border-radius: 15px;
+    background-color: #c23564;
+    transition: all 0.2s ease;
+  }
+  .tab-item {
+      padding: 10px 20px 0px 14px;
+      font-size: 14px;text-align: center;
+      color: #16181c;background-color: #e8e3e4;
+     border-radius: 30px;
+      border-bottom: 5px solid transparent;
+      opacity: 0.6;
+      cursor: pointer;
+      transition: all 0.5s ease;
+      margin-right: 8px;margin-bottom: 15px;
+      padding: 10px 20px;
+      height: 40px;flex: 0 0 auto;
+  }
+  .tab-icon {
+    font-size: 24px;
+    width: 32px;
+    position: relative;
+    top: 2px;
+  }
+  .tab-item:hover {
+    opacity: 1;
+    background-color: #e8e3e4;
+  }
+  .tab-item.active {
+    opacity: 1;
+  }
+  .w-lg-50{
+      width: 50%;
+      text-align: left;
+  }
+
+
+  /* Dark Light Color Navabr */
+body.lighed .uk-navbar-container:not(.uk-navbar-transparent) {
+    background-color: #060405cc !important;
+    transition: 0.3s linear;
+  }
+
+  body.darked .uk-navbar-container:not(.uk-navbar-transparent) {
+    background-color: #fffafae6 !important;
+    transition: 0.3s linear;
+  }
+  body.darked .uk-navbar-nav > li > a {
+    color: #16181b;
+    text-transform: uppercase;
+    transition: 0.1s ease-in-out;
+    transition-property: color, background-color;
+    font-family: "Montserrat Alternates", sans-serif;
+  }
+
+  body.darked .uk-navbar-toggle {
+    color: black;
+  }
+  body.darked .uk-logo img {
+    filter: invert(1);
+  }
+  body.darked .menuIcons {
+    color: black;
+  }
+  body.darked .uk-button-default {
+    background-color: transparent;
+    color: #333;
+    border: 1px solid #e5e5e5;
+    color: white;
+}
+
+  /* Dark Light Color Navabr */
+  /*product box category css*/
+
+
+
+  /*prod box */
+  .img-responsive{
+      object-fit: contain;
+      display: block;
+      width: 191px;
+      height: 191px;
+      object-fit: contain;
+      border: none;
+      transform: scale(1);
+      transition: all 1s;
+      z-index: 1;
+      opacity: 1;
+
+  }
+  .wrap_box_category{
+      position: relative;
+      display: inline-block;
+      overflow:hidden;
+      text-align: center;
+  }
+  .uk-card-media-top{
+      padding: 15px 0px;
+      background-color: #00000005;
+  }
+  body.darked .uk-card-media-top {
+      padding: 15px 0px;
+      background-color: #00000009;
+  }
+  .name_category{
+      color: #938764;
+      font-size: 16px;
+      font-weight: 400;
+      display: block;
+      position: relative;
+      margin-top: 18px;
+  }
+  /*
+  .name_category::before{
+      content: '';
+      position: absolute;
+      left: 0;
+      right: 0;
+      top: -5px;
+      width: 65%;
+      height: 1px;
+      background-color: #aba487;
+      margin-right: auto;
+      margin-left: auto;
+      box-shadow: 0px 0px 4px 1px #c2bba7;
+  }
+  */
+
+  .wrap_box_category:hover .rig-text {
+      transform: translateY(0px);
+      opacity: 0.92;
+  }
+  .rig-text img{
+      height: 210px;
+      object-fit: cover;
+  }
+  .wrap_box_category:hover .rig-overlay {
+      opacity: 0.8;
+  }
+
+  .wrap_box_category:hover .rig-img {
+      transform: scale(1.0);
+      opacity: 1;
+  }
+
+  .rig-overlay {
+      position: absolute;
+      display: block;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      right: 0;
+      margin: auto;
+      background: #373637  no-repeat center 20%;
+      background-size: 50px 50px;
+      opacity: 0;
+      filter: alpha(opacity=0);
+      transition: all 0.2s;
+      z-index: 1;
+  }
+
+    .rig-text {
+      display: block;
+      padding: 0 0px;
+      box-sizing: border-box;
+      position: absolute;
+      left: 0;
+      width: 100%;
+      top: 0%;
+      opacity: 0;
+      filter: alpha(opacity=0);
+      transform: translateX(-200px);
+      transition: all .7s;
+      z-index: 1;
+  }
+
+
+/*overlay product info */
+.prod-details
+{
+display: contents;
+}
+.prod-details .watermk{
+    width: 70%;
+    object-fit: contain;
+    height: 60px;
+    margin-top: 30px;
+}
+.prod-details .prod-name , .prod-details .prod-catg {
+display: block;
+color: white;
+}
+.prod-details .prod-price{
+    color: white;
+    display: block;
+    margin-top: 8px;
+}
+
+
+  /*end */
+  @media(max-width:1199px)
+  {
+      .w-lg-50{
+      width: 65%;
+  }
+  }
+  @media(max-width:992px)
+  {
+      .w-lg-50{
+      width: 100%;
+
+  }
+  .tabs {
+    display: flex;
+    position: relative;
+    overflow-x: auto;
+}
+  .tab-item {
+    /* padding: 10px 20px 0px 14px; */
+    font-size: 16px;
+    text-align: center;
+    color: #16181c;
+    background-color: #e8e3e4;
+    /* border-top-left-radius: 5px; */
+    /* border-top-right-radius: 5px; */
+    border-radius: 30px;
+    border-bottom: 5px solid transparent;
+    opacity: 0.6;
+    cursor: pointer;
+    transition: all 0.5s ease;
+    margin-right: 8px;
+    margin-bottom: 15px;
+    /* line-height: 31px; */
+    padding: 10px 43px;
+    height: 44px;
+    flex: 0 0 auto;
+}
+
+}
+
+
+

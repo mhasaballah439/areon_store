@@ -1,0 +1,10 @@
+name: Products
+form: $/coolnet/products/models/products/fields.yaml
+modelClass: Coolnet\Products\Models\Products
+defaultRedirect: coolnet/products/products
+create:
+    redirect: 'coolnet/products/products/update/:id'
+    redirectClose: coolnet/products/products
+update:
+    redirect: coolnet/products/products
+    redirectClose: coolnet/products/products

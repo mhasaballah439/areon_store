@@ -1,0 +1,7 @@
+{
+    "require": {
+        "kreait/firebase-php": "5.0",
+        "berkayk/onesignal-laravel": "^1.0",
+        "laravel-notification-channels/onesignal": "^2.1"
+    }
+}

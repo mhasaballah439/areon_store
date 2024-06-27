@@ -1,0 +1,27 @@
+{% if web_slider.count %}
+<div class="uk-position-relative uk-visible-toggle uk-light uk_slider_index" tabindex="-1"
+     uk-slideshow="animation: fade;autoplay: true;autoplay-interval:5000;pause-on-hover:false">
+
+    <ul class="uk-slideshow-items">
+        {% for slide in web_slider %}
+        <li>
+            <div class="overlay_slider"></div>
+            <img src="{{slide.image.path}}"
+                 alt="" uk-cover />
+            <div class="uk-position-center uk-position-small uk-text-center">
+                <h2 class="title_fonts_slider" uk-slideshow-parallax="x: 400,-400">
+                    {{slide.main_title}}</h2>
+                <p class="info_s" uk-slideshow-parallax="x: 600,-600">
+                {{slide.sub_title}}
+
+            </div>
+            <img class="imgSmall" src="{{slide.image_small.path}}">
+        </li>
+        {% endfor %}
+    </ul>
+    <a class="uk-position-center-left uk-position-small uk-hidden-hover" href="#" uk-slidenav-previous
+       uk-slideshow-item="previous"></a>
+    <a class="uk-position-center-right uk-position-small uk-hidden-hover" href="#" uk-slidenav-next
+       uk-slideshow-item="next"></a>
+</div>
+{% endif %}

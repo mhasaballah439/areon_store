@@ -1,0 +1,17 @@
+title = "Hjem"
+url = "/"
+layout = "default"
+[site_slider]
+[categories]
+==
+<div class="slider_index_wrap">
+    {% partial 'home/slider' %}
+</div>
+
+<div class="section_1" style="margin-top: 60px;">
+    {% partial 'home/cat_sliders' %}
+</div>
+{% partial 'basic/theme' %}
+{% put styles %}
+<link rel="stylesheet" href="{{'assets/css/index.css'|theme}}">
+{% endput %}

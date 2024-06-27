@@ -1,0 +1,37 @@
+title = "about"
+url = "/:slug"
+layout = "default"
+
+[page_detail]
+slug = '{{ :slug }}'
+==
+function onEnd(){
+if(!empty($this->web_setting->seo_title)){
+$this->page->meta_title = !empty($this->page_detail->seo_title)? $this->page_detail->seo_title.' :: ':'';
+$this->page->meta_title.= $this->web_setting->seo_title;
+}
+elseif(!empty($this->page_detail->seo_title))  $this->page->meta_title = $this->page_detail->seo_title;
+
+if(!empty($this->page_detail->seo_description)) $this->page->meta_description =  $this->page_detail->seo_description ;
+elseif(!empty($this->web_setting->seo_description)) $this->page->meta_description =  $this->web_setting->seo_description ;
+
+if(!empty($this->page_detail->seo_keyword)) $this->page->meta_keywords =  $this->page_detail->seo_keyword;
+elseif(!empty($this->web_setting->seo_keyword)) $this->page->meta_keywords =  $this->web_setting->seo_keyword;
+}
+==
+<!-- = = = = == = ==  = == = Start OMOSS Content Html = = = == = = =  -->
+<section class="sectionOne">
+    <div class="container text-center">
+        <div class="row" style="justify-content: center;">
+            <div class="col-md-10 col-12 textOss">
+                <div class="panel text-left">
+                    {{ page_detail.detail|raw }}
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% partial 'basic/theme' %}
+{% put styles %}
+<link rel="stylesheet" href="{{'assets/css/OmOss.css'|theme}}">
+{% endput %}

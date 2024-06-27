@@ -1,0 +1,10 @@
+name: Orders
+form: $/coolnet/orders/models/orders/fields.yaml
+modelClass: Coolnet\Orders\Models\Orders
+defaultRedirect: coolnet/orders/orders
+create:
+    redirect: 'coolnet/orders/orders/update/:id'
+    redirectClose: coolnet/orders/orders
+update:
+    redirect: coolnet/orders/orders
+    redirectClose: coolnet/orders/orders

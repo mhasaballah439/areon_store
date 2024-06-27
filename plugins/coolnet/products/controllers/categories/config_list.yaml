@@ -1,0 +1,12 @@
+title: Categories
+modelClass: Coolnet\Products\Models\Categories
+list: $/coolnet/products/models/categories/columns.yaml
+recordUrl: 'coolnet/products/categories/update/:id'
+noRecordsMessage: 'backend::lang.list.no_records'
+recordsPerPage: 20
+showSetup: true
+showCheckboxes: true
+toolbar:
+    buttons: list_toolbar
+    search:
+        prompt: 'backend::lang.list.search_prompt'

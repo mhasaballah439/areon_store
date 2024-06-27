@@ -1,0 +1,10 @@
+fields:
+    hash:
+        label: Hash
+        required: true
+        type: text
+        comment: Secret hash for calling command by public URL. Hash should be at least 16 characters length.
+    hint:
+        label: Available commands:
+        type: partial
+        path: $/vojtasvoboda/webartisan/models/settings/partials/_howto.htm

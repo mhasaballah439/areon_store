@@ -1,0 +1,26 @@
+1.0.1:
+    - 'Initialize plugin.'
+1.0.2:
+    - 'Created table coolnet_orders_orders'
+    - builder_table_create_coolnet_orders_orders.php
+1.0.3:
+    - 'Created table coolnet_orders_details'
+    - builder_table_create_coolnet_orders_details.php
+1.0.4:
+    - 'Updated table coolnet_orders_orders'
+    - builder_table_update_coolnet_orders_orders.php
+1.0.5:
+    - 'Updated table coolnet_orders_orders'
+    - builder_table_update_coolnet_orders_orders_2.php
+1.0.6:
+    - 'Created table coolnet_orders_status'
+    - builder_table_create_coolnet_orders_status.php
+1.0.7:
+    - 'Updated table coolnet_orders_orders'
+    - builder_table_update_coolnet_orders_orders_3.php
+1.0.8:
+    - 'Updated table coolnet_orders_orders'
+    - builder_table_update_coolnet_orders_orders_4.php
+1.0.9:
+    - 'Updated table coolnet_orders_orders'
+    - builder_table_update_coolnet_orders_orders_5.php

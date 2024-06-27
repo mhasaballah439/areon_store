@@ -1,0 +1,13 @@
+list: $/coolnet/pages/models/pages/columns.yaml
+modelClass: Coolnet\Pages\Models\Pages
+title: Pages
+noRecordsMessage: 'backend::lang.list.no_records'
+showSetup: true
+showCheckboxes: true
+recordsPerPage: 20 
+showTree: true
+toolbar:
+    buttons: list_toolbar
+    search:
+        prompt: 'backend::lang.list.search_prompt'
+recordUrl: 'coolnet/pages/pages/update/:id'

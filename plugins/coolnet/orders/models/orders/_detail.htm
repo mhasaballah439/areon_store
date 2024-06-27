@@ -1,0 +1,110 @@
+<div class="scoreboard">
+        <div data-controls="toolbar">
+
+            <div class="scoreboard-item title-value">
+                <h4>Ordernummer #</h4>
+                <p><?= $formModel->code ?></p>
+                <p class="description">
+                    Mobile: <?= ($formModel->user)?$formModel->user->mobile:'' ?>
+                </p>
+            </div>
+            <div class="scoreboard-item title-value">
+                <h4>Kundernavn</h4>
+                <?php if($formModel->user): ?>
+                <p class="oc-icon-user">
+                    <?= $formModel->user->name ?> <?= $formModel->user->surname ?>
+                </p>
+                <p class="description">
+                    E-Post: <?= $formModel->user->email ?>
+                </p>
+                <?php endif; ?>
+            </div>
+            <div class="scoreboard-item title-value">
+                <h4>Fra</h4>
+                <p><?= $formModel->order_from ?></p>
+                <p class="description"></p>
+            </div>
+
+            <?php if($formModel->is_payment): ?>
+            <div class="scoreboard-item title-value">
+                <h4>Betaling</h4>
+                <p class="positive">Betalt</p>
+                <p class="description"><?= $formModel->payment ?> </p>
+            </div>
+            <?php else: ?>
+            <div class="scoreboard-item title-value">
+                <h4>Betaling</h4>
+                <p class="negative">Ikke Betalt</p>
+                <p class="description"><?= $formModel->payment ?></p>
+            </div>
+            <?php endif; ?>
+
+
+        </div>
+    <?php if($formModel->note): ?>
+    <div  class="flash-message static warning"><b>Note:</b><br><?= $formModel->note?></div>
+    <?php endif ?>
+    <p class="text-dark">Utkjøring til</p>
+    </div>
+        <table class="table">
+            <thead>
+            <tr>
+                <th scope="col">By</th>
+                <th scope="col">Gate</th>
+                <th scope="col">Bygning</th>
+                <th scope="col">Post kode</th>
+                <th scope="col">Mobil</th>
+                <th scope="col">Fullt navn</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td><?= ($formModel->address) ? $formModel->address->city : '' ?></td>
+                <td><?= ($formModel->address) ? $formModel->address->street : '' ?></td>
+                <td><?= ($formModel->address) ? $formModel->address->building : '' ?></td>
+                <td><?= ($formModel->address) ? $formModel->address->zip_code : '' ?></td>
+                <td><?= ($formModel->address) ? $formModel->address->mobile : '' ?></td>
+                <td><?= ($formModel->address) ? $formModel->address->full_name : '' ?></td>
+            </tr>
+
+            </tbody>
+</table>
+       <table class="table table-bordered nowrap">
+
+                <tr>
+                    <th>Desc</th>
+                    <th>Qty</th>
+                    <th>Price</th>
+                    <th>Total</th>
+                </tr>
+            <?php
+            foreach($formModel->detailData as $detail):
+             ?>
+                <tr>
+                    <td><?= $detail->product_name ?></td>
+                    <td><?= $detail->qty ?></td>
+                    <td><?= $detail->price ?> ,-</td>
+                    <td><?= ($detail->sub_total_product > 0) ? $detail->sub_total_product : 0 ?> ,-</td>
+                </tr>
+            <?php endforeach ?>
+
+                <?php if($formModel->sub_total > 0):  ?>
+                <tr>
+                    <th colspan="3">Sup Total</th>
+                    <th><?=  $formModel->sub_total ?> ,-</th>
+                </tr>
+                <?php endif  ?>
+           <tr>
+               <th colspan="3">Total</th>
+               <th><?= $formModel->total ?> ,-</th>
+           </tr>
+           <tr>
+               <th colspan="3">Print</th>
+               <th>
+                <a href="<?= url('printOrder',[$formModel->id,$formModel->code]) ?>" target="_blank">
+                   Print
+               </a>
+               </th>
+           </tr>
+
+        </table>

@@ -1,0 +1,4 @@
+title: WarehousesData
+modelClass: Coolnet\Products\Models\Wharehouses
+toolbar:
+    buttons: reorder_toolbar

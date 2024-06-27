@@ -1,0 +1,58 @@
+<div class="col-12">
+    <div class="col-md-4">
+        <input id="myInput" class="form-control" type="text" placeholder="Search.." style="margin-bottom: 15px">
+    </div>
+    <div class="control-list">
+        <form data-request="onImportWarehouse" data-request-flash>
+            <table class="table data">
+                <thead>
+                <tr>
+                    <th class="text-center">Product</th>
+                    <th class="text-center">Category</th>
+                    <th class="text-center">Qty</th>
+                </tr>
+                </thead>
+                <tbody id="myTable">
+                <?php foreach($products_lists as $product): ?>
+                <tr>
+                    <td class="text-center"><?= $product->short_title ?></td>
+                    <td class="text-center"><?= $product->cat_data ?></td>
+                    <td class="text-center col-md-2">
+                        <input type="number" class="form-control" required value="0" name="quantity[<?= $product->id ?>]">
+                    </td>
+                </tr>
+                <?php endforeach ?>
+                </tbody>
+            </table>
+            <button class="btn btn-primary" type="submit" style="margin-top: 12px">Submit</button>
+        </form>
+    </div>
+</div>
+<style>
+    table.table.data thead td, table.table.data thead th {
+        border-width: 1px;
+        border-top: 1px solid #d4d8da !important;
+        border-bottom: 2px solid #d4d8da !important;
+        border-color: #d4d8da;
+        padding: 0;
+        font-weight: normal;
+        text-transform: uppercase !important;
+        font-size: 11px;
+        white-space: nowrap;
+        padding: 14px 0 14px 10px !important;
+        text-align: center !important;
+    }
+    table.table.data thead tr th:first-child {
+        padding-left: 10px !important;
+    }
+</style>
+<script>
+    $(document).ready(function(){
+        $("#myInput").on("keyup", function() {
+            var value = $(this).val().toLowerCase();
+            $("#myTable tr").filter(function() {
+                $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+            });
+        });
+    });
+</script>
